@@ -1,16 +1,50 @@
-import React, { useRef } from "react";
-import Editor, { Monaco } from "@monaco-editor/react";
+import React, { useEffect, useRef, useState } from "react";
+import Editor from "@monaco-editor/react";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
+import files from "../data/files";
 
 const Home = () => {
   const editorRef = useRef(null);
-  const defaultIndex = '{\n\t"mappings": {\n\t"dynamic": true\n\t}\n}';
+  const [fileName, setFileName] = useState("basic.json");
+  const file = files[fileName as string];
 
-  function handleEditorDidMount(editor: any, monaco: Monaco) {
-    console.log("haha", editor, monaco);
-    editorRef.current = editor;
-  }
+  useEffect(() => {
+    editorRef.current?.focus();
+  }, [file.name]);
+
+  return (
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section>
+        <button
+          disabled={fileName === "basic.json"}
+          onClick={() => setFileName("basic.json")}
+        >
+          Basic Index Definition
+        </button>
+        <button
+          disabled={fileName === "intermediate.json"}
+          onClick={() => setFileName("intermediate.json")}
+        >
+          Intermediate Index Definition
+        </button>
+        <Editor
+          height="60vh"
+          width="60vh"
+          path={file.name}
+          defaultLanguage={file.language}
+          defaultValue={file.value}
+          theme="vs-dark"
+          onMount={(editor) => (editorRef.current = editor)}
+          onChange={handleEditorChange}
+        />
+        <button onClick={handleValidate}> Validate. </button>
+      </section>
+    </Layout>
+  );
 
   function handleValidate() {
     // @ts-ignore
@@ -20,29 +54,9 @@ const Home = () => {
     alert(JSON.stringify(editorJson));
   }
 
-  function handleEditorChange(value: any, _) {
+  function handleEditorChange(value: any, _: any) {
     console.log("current value is :", value);
   }
-
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <Editor
-          height="60vh"
-          width="60vh"
-          defaultLanguage="json"
-          defaultValue={defaultIndex}
-          theme="vs-dark"
-          onMount={handleEditorDidMount}
-          onChange={handleEditorChange}
-        />
-        <button onClick={handleValidate}> Validate. </button>
-      </section>
-    </Layout>
-  );
 };
 
 export default Home;
