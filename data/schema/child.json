@@ -1,0 +1,10 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "q1": {
+        "enum": ["x1", "x2"]
+      }
+    }
+  }
+}

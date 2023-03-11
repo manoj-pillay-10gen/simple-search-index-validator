@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "p1": {
+      "enum": ["v1", "v2"]
+    },
+    "p2": {
+      "$ref": "child"
+    }
+  }
+}

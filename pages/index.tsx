@@ -3,12 +3,52 @@ import Editor, { useMonaco } from "@monaco-editor/react";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import files from "../data/files";
+import { editor } from "monaco-editor";
+import { loadAllSchema } from "../lib/schema";
 
-const Home = () => {
+export async function getStaticProps() {
+  const res = loadAllSchema();
+  const allSchema = [];
+  for await (const schema of res) {
+    const schemaDef = {
+      uri: schema.id,
+      schema: JSON.parse(schema.contentJson).schema,
+    };
+    // console.log(JSON.stringify(schemaDef));
+    if (schema.id !== "parent") {
+      allSchema.push(schemaDef);
+    }
+  }
+  return {
+    props: {
+      allSchema,
+    },
+  };
+}
+
+export default function Home({ allSchema }) {
   const monaco = useMonaco();
   const editorRef = useRef(monaco);
   const [fileName, setFileName] = useState("basic.json");
-  const file = files[fileName as string];
+  const file = files[fileName];
+
+  const parentSchema = {
+    uri: "parent", // id of the first schema
+    fileMatch: [fileName], // associate with our model
+    schema: require("../data/schema/parent.json"),
+  };
+
+  // const childSchema = {
+  //   uri: "child", // id of the second schema
+  //   schema: {
+  //     type: "object",
+  //     properties: {
+  //       q1: {
+  //         enum: ["x1", "x2"],
+  //       },
+  //     },
+  //   },
+  // };
 
   useEffect(() => {
     editorRef.current?.focus();
@@ -50,39 +90,13 @@ const Home = () => {
   );
 
   function handleEditorDidMount(
-    editor: monaco.editor.IStandaloneCodeEditor,
-    monaco: monaco
+    editor: editor.IStandaloneCodeEditor,
+    monaco: any
   ) {
+    allSchema.push(parentSchema);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
-      schemas: [
-        {
-          uri: "http://myserver/foo-schema.json", // id of the first schema
-          fileMatch: ["basic.json"], // associate with our model
-          schema: {
-            type: "object",
-            properties: {
-              p1: {
-                enum: ["v1", "v2"],
-              },
-              p2: {
-                $ref: "http://myserver/bar-schema.json", // reference the second schema
-              },
-            },
-          },
-        },
-        {
-          uri: "http://myserver/bar-schema.json", // id of the second schema
-          schema: {
-            type: "object",
-            properties: {
-              q1: {
-                enum: ["x1", "x2"],
-              },
-            },
-          },
-        },
-      ],
+      schemas: allSchema,
     });
     editorRef.current = editor;
   }
@@ -90,8 +104,9 @@ const Home = () => {
     // @ts-ignore
     const editorJsonString = editorRef.current.getValue();
     const editorJson = JSON.parse(editorJsonString);
-    console.log(editorJson.mappings.dynamic);
+    // console.log(editorJson.mappings.dynamic);
     alert(JSON.stringify(editorJson));
+    console.log(allSchema);
   }
 
   function handleValidate(markers) {
@@ -108,6 +123,4 @@ const Home = () => {
   function handleEditorChange(value: any, _: any) {
     console.log("current value is :", value);
   }
-};
-
-export default Home;
+}
