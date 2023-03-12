@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "collection": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection"
+          ]
+        },
+        "analyzer": {
+          "$ref": "common#/definitions/analyzers"
+        }
+      },
+      "required": [
+        "name",
+        "source",
+        "analyzer"
+      ]
+    }
+  ]
+}

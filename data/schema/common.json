@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "analyzers": {
+      "enum": [
+        "lucene.whitespace",
+        "lucene.standard",
+        "lucene.simple",
+        "lucene.keyword",
+        null
+      ],
+      "required": true,
+      "default": "lucene.standard"
+    },
+    "non-empty-string" : {
+      "type": "string",
+      "minLength": 1
+    }
+
+  }
+}

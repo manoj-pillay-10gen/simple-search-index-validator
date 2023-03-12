@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "mappings": {
+      "$ref": "mappings"
+    },
+    "synonyms": {
+      "$ref":"synonyms"
+    },
+    "database": {
+      "$ref": "common#/definitions/non-empty-string"
+    },
+    "collectionName": {
+      "$ref": "common#/definitions/non-empty-string"
+    },
+    "analyzer": {
+      "$ref": "common#/definitions/analyzers"
+    },
+    "searchAnalyzer": {
+      "$ref": "common#/definitions/analyzers"
+    },
+    "storedSource": {
+      "type": "boolean"
+    }
+  },
+  "required": ["mappings", "collectionName", "database"],
+  "additionalProperties": false,
+  "definitions": {}
+}

@@ -1,5 +1,4 @@
-const basicIndexDefinitionJSON = `
-{
+const basicIndexDefinitionJSON = `{
   "mappings": {
     "dynamic": true
   }

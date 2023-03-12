@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import Editor, { useMonaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import files from "../data/files";
 import { editor } from "monaco-editor";
 import { loadAllSchema } from "../lib/schema";
+import IMarker = editor.IMarker;
 
 export async function getStaticProps() {
   const res = loadAllSchema();
@@ -12,10 +13,10 @@ export async function getStaticProps() {
   for await (const schema of res) {
     const schemaDef = {
       uri: schema.id,
-      schema: JSON.parse(schema.contentJson).schema,
+      schema: JSON.parse(schema.contentJson),
     };
     // console.log(JSON.stringify(schemaDef));
-    if (schema.id !== "parent") {
+    if (schema.id !== "index") {
       allSchema.push(schemaDef);
     }
   }
@@ -26,29 +27,19 @@ export async function getStaticProps() {
   };
 }
 
+// @ts-ignore
 export default function Home({ allSchema }) {
-  const monaco = useMonaco();
-  const editorRef = useRef(monaco);
+  const editorRef = useRef(null);
   const [fileName, setFileName] = useState("basic.json");
   const file = files[fileName];
+  const [errors, setErrors] = useState<{ id: number; msg: string }[]>([]);
+  let nextId = 0;
 
   const parentSchema = {
-    uri: "parent", // id of the first schema
+    uri: "index", // id of the first schema
     fileMatch: [fileName], // associate with our model
-    schema: require("../data/schema/parent.json"),
+    schema: require("../data/schema/index.json"),
   };
-
-  // const childSchema = {
-  //   uri: "child", // id of the second schema
-  //   schema: {
-  //     type: "object",
-  //     properties: {
-  //       q1: {
-  //         enum: ["x1", "x2"],
-  //       },
-  //     },
-  //   },
-  // };
 
   useEffect(() => {
     editorRef.current?.focus();
@@ -78,13 +69,25 @@ export default function Home({ allSchema }) {
           path={file.name}
           language={file.language}
           defaultValue={file.value}
-          options={{ readOnly: false, cursorBlinking: "blink" }}
+          options={{
+            readOnly: false,
+            cursorBlinking: "blink",
+            fontSize: "18px",
+            roundedSelection: false,
+          }}
           theme="vs-dark"
           onMount={handleEditorDidMount}
           onChange={handleEditorChange}
           onValidate={handleValidate}
         />
         <button onClick={handleValidateButtonClick}> Validate. </button>
+      </section>
+      <section>
+        <ul>
+          {errors.map((e) => (
+            <li key={e.id}>{e.msg}</li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
@@ -96,6 +99,7 @@ export default function Home({ allSchema }) {
     allSchema.push(parentSchema);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
+      schemaValidation: "error",
       schemas: allSchema,
     });
     editorRef.current = editor;
@@ -108,17 +112,19 @@ export default function Home({ allSchema }) {
     alert(JSON.stringify(editorJson));
     console.log(allSchema);
   }
-
-  function handleValidate(markers) {
+  function handleValidate(markers: IMarker[]) {
     // model markers
-    markers.forEach((marker) =>
-      console.log(
-        "(Line Number",
-        marker.startLineNumber,
-        `) ${marker.severity}: `,
-        marker.message
-      )
-    );
+    let errMessages = markers.map((marker) => {
+      const errMsg = `(Line Number ${marker.startLineNumber}) ${marker.severity}: ${marker.message}`;
+      if (
+        typeof errMsg !== "undefined" &&
+        !errors.some((e) => e.msg === errMsg) &&
+        errMsg !== ""
+      ) {
+        setErrors([{ id: nextId++, msg: errMsg }]);
+      }
+    });
+    console.log(`ErrMessages is ${errMessages}`);
   }
   function handleEditorChange(value: any, _: any) {
     console.log("current value is :", value);

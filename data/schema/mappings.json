@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "dynamic": {
+      "type": "boolean"
+    },
+    "fields": {
+      "type": "object",
+      "properties": {
+
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["dynamic"]
+    },
+    {
+      "required": ["fields"]
+    }
+  ]
+}
