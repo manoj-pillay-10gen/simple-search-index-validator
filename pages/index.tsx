@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Editor from "@monaco-editor/react";
+import Editor, { useMonaco } from "@monaco-editor/react";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import files from "../data/files";
@@ -29,9 +29,9 @@ export async function getStaticProps() {
 
 // @ts-ignore
 export default function Home({ allSchema }) {
-  const editorRef = useRef(null);
+  const editorRef = useRef<any>(null);
   const [fileName, setFileName] = useState("basic.json");
-  const file = files[fileName];
+  const file = files[fileName as string];
   const [errors, setErrors] = useState<{ id: number; msg: string }[]>([]);
   let nextId = 0;
 
@@ -72,7 +72,7 @@ export default function Home({ allSchema }) {
           options={{
             readOnly: false,
             cursorBlinking: "blink",
-            fontSize: "18px",
+            fontWeight: "18px",
             roundedSelection: false,
           }}
           theme="vs-dark"

@@ -16,7 +16,7 @@ const intermediateIndexDefinitionJSON = `
 }
 `;
 
-const files = {
+const files: { [index: string]: any } = {
   "basic.json": {
     name: "basic.json",
     language: "json",
