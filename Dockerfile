@@ -33,12 +33,6 @@ COPY --from=development /usr/src/app/public /usr/src/app/public
 # copy builded next app from the previous `development` step
 COPY --from=development /usr/src/app/.next /usr/src/app/.next
 
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
 # default port that Next.js web server listens to
 EXPOSE 3000
 
