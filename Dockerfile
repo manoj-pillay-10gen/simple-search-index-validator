@@ -28,7 +28,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # copy public files
-COPY --from=development /usr/src/app/public /usr/src/app/public
+COPY --from=development /usr/src/app/data /usr/src/app/data
 
 # copy builded next app from the previous `development` step
 COPY --from=development /usr/src/app/.next /usr/src/app/.next
