@@ -20,6 +20,11 @@
     "searchAnalyzer": {
       "$ref": "common#/definitions/analyzers"
     },
+    "analyzers": {
+      "type": "array",
+      "items": { "$ref": "custom_analyzer"},
+      "minItems": 1
+    },
     "storedSource": {
       "type": "boolean"
     }
