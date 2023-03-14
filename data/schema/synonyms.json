@@ -1,18 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Specify synonym mappings to use in your index.",
   "type": "array",
   "items": [
     {
       "type": "object",
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "markdownDescription": "Name of the synonym mapping. Name must be unique in the index definition. Value can't be an empty string."
         },
         "source": {
           "type": "object",
+          "markdownDescription": "Source collection(https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec) for synonyms. The `source` option takes the `collection` field.",
           "properties": {
             "collection": {
-              "type": "string"
+              "type": "string",
+              "markdownDescription": "Name of the MongoDB collection that is in the same database as the Atlas Search index. Documents in this collection must be in the format described in the [Synonyms Source Collection Documents](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec)."
             }
           },
           "required": [
@@ -20,7 +24,8 @@
           ]
         },
         "analyzer": {
-          "$ref": "common#/definitions/analyzers"
+          "$ref": "common#/definitions/analyzers",
+          "markdownDescription": "Name of the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to use with this synonym mapping."
         }
       },
       "required": [
