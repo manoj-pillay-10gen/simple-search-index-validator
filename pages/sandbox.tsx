@@ -32,7 +32,7 @@ export default function Home({ allSchema }) {
   const editorRef = useRef<any>(null);
   const [fileName, setFileName] = useState("basic.json");
   const file = files[fileName as string];
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState<{ id: number; msg: string }[]>([]);
   let nextId = 0;
 
   const parentSchema = {
@@ -51,6 +51,18 @@ export default function Home({ allSchema }) {
         <title>{siteTitle}</title>
       </Head>
       <section>
+        <button
+          disabled={fileName === "basic.json"}
+          onClick={() => setFileName("basic.json")}
+        >
+          Basic Index Definition
+        </button>
+        <button
+          disabled={fileName === "intermediate.json"}
+          onClick={() => setFileName("intermediate.json")}
+        >
+          Intermediate Index Definition
+        </button>
         <Editor
           height="60vh"
           width="60vh"
@@ -60,7 +72,7 @@ export default function Home({ allSchema }) {
           options={{
             readOnly: false,
             cursorBlinking: "blink",
-            fontWeight: "50",
+            fontWeight: "18px",
             roundedSelection: false,
           }}
           theme="vs-dark"
@@ -68,9 +80,14 @@ export default function Home({ allSchema }) {
           onChange={handleEditorChange}
           onValidate={handleValidate}
         />
+        <button onClick={handleValidateButtonClick}> Validate. </button>
       </section>
       <section>
-        <h4>{errors}</h4>
+        <ul>
+          {errors.map((e) => (
+            <li key={e.id}>{e.msg}</li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
@@ -87,7 +104,6 @@ export default function Home({ allSchema }) {
     });
     editorRef.current = editor;
   }
-
   function handleValidateButtonClick() {
     // @ts-ignore
     const editorJsonString = editorRef.current.getValue();
@@ -96,18 +112,20 @@ export default function Home({ allSchema }) {
     alert(JSON.stringify(editorJson));
     console.log(allSchema);
   }
-
   function handleValidate(markers: IMarker[]) {
     // model markers
     let errMessages = markers.map((marker) => {
       const errMsg = `(Line Number ${marker.startLineNumber}) ${marker.severity}: ${marker.message}`;
-      if (typeof errMsg !== "undefined" && errMsg !== "") {
-        setErrors(errMsg);
+      if (
+        typeof errMsg !== "undefined" &&
+        !errors.some((e) => e.msg === errMsg) &&
+        errMsg !== ""
+      ) {
+        setErrors([{ id: nextId++, msg: errMsg }]);
       }
     });
     console.log(`ErrMessages is ${errMessages}`);
   }
-
   function handleEditorChange(value: any, _: any) {
     console.log("current value is :", value);
   }
