@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["nGram"]
+    },
+    "minGram": {
+      "type": "integer",
+      "description": "Number of characters to include in the shortest token created."
+    },
+    "maxGram": {
+      "type": "integer",
+      "description": "Number of characters to include in the longest token created."
+    }
+  },
+  "required": ["type","maxGram","minGram"]
+}

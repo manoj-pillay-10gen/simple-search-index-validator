@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["regexCaptureGroup"],
+      "description": "Human-readable label that identifies this tokenizer type. Value must be regexCaptureGroup"
+    },
+    "pattern": {
+      "type": "string",
+      "description": "Regular expression to match against"
+    },
+    "group": {
+      "type": "integer",
+      "description": "Index of the character group within the matching expression to extract into tokens. Use 0 to extract all character groups."
+    }
+  },
+  "required": ["type","pattern","group"]
+}
