@@ -5,7 +5,7 @@
     "type": {
       "type": "string",
       "enum": ["regexCaptureGroup"],
-      "description": "Human-readable label that identifies this tokenizer type. Value must be regexCaptureGroup"
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexCaptureGroup`"
     },
     "pattern": {
       "type": "string",

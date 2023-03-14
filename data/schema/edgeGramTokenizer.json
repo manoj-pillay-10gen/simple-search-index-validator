@@ -8,11 +8,11 @@
     },
     "minGram": {
       "type": "integer",
-      "description": "Number of characters to include in the shortest token created."
+      "markdownDescription": "Number of characters to include in the shortest token created."
     },
     "maxGram": {
       "type": "integer",
-      "description": "Number of characters to include in the longest token created."
+      "markdownDescription": "Number of characters to include in the longest token created."
     }
   },
   "required": ["type","maxGram","minGram"]

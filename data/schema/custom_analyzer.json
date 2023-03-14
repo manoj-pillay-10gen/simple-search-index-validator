@@ -3,27 +3,26 @@
   "type": "object",
   "properties": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "markdownDescription": "Name of the custom analyzer. Names must be unique within an index, and may not start with any of the following strings: \n- `lucene` \n- `builtin` \n- `mongodb`"
     },
     "charFilters": {
       "type": "array",
+      "markdownDescription": "Specify one or more [character filters](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/character-filters/#std-label-char-filters-ref). Character filters examine text one character at a time and perform filtering operations.",
       "items": {
         "$ref": "charFilter"
       }
     },
     "tokenizer": {
-      "$ref": "tokenizer"
+      "$ref": "tokenizer",
+      "markdownDescription": "Specify the [tokenizer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/tokenizers/#std-label-tokenizers-ref). An analyzer uses a tokenizer to split chunks of text into groups, or tokens, for indexing purposes. For example, the whitespace tokenizer splits text fields into individual words based on where whitespace occurs."
     },
     "tokenFilters": {
       "type": "array",
-      "items": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "string"
-        }
-      ]
+      "markdownDescription": "Specify one or more [token filters](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#std-label-token-filters-ref). After the tokenization step, the resulting tokens can pass through one or more token filters. A token filter performs operations such as: \n- Stemming, which reduces related words, such as \"talking\", \"talked\", and \"talks\" to their root word \"talk\".\n- Redaction, the removal of sensitive information from public documents.",
+      "items": {
+        "$ref": "tokenFilter"
+      }
     }
   },
   "required": [

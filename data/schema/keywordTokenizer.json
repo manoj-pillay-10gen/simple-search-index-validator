@@ -5,7 +5,7 @@
     "type": {
       "type": "string",
       "enum": ["keyword"],
-      "description": "Human-readable label that identifies this tokenizer type. Value must be keyword."
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `keyword`."
     }
   },
   "required": ["type"]

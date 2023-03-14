@@ -54,7 +54,8 @@
         null
       ],
       "required": true,
-      "default": "lucene.standard"
+      "default": "lucene.standard",
+      "markdownDescription": "Specifies the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to apply to string fields when indexing. If you set this only at the top and do not specify an analyzer for the fields in the index definition, Atlas Search applies this analyzer to all the fields. To use a different analyzer for each field, you must specify a different analyzer for the field. If omitted, defaults to [Standard Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/standard/#std-label-ref-standard-analyzer)."
     },
     "non-empty-string" : {
       "type": "string",

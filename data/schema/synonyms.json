@@ -12,7 +12,7 @@
         },
         "source": {
           "type": "object",
-          "markdownDescription": "Source collection(https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec) for synonyms. The `source` option takes the `collection` field.",
+          "markdownDescription": "[Source collection](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec) for synonyms. The `source` option takes the `collection` field.",
           "properties": {
             "collection": {
               "type": "string",

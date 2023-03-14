@@ -1,14 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "markdownDescription": "Specifies how to index fields at different paths for this index. Specify dynamic or static mapping of fields. To disable dynamic mapping, set `dynamic` to `false`. By default, dynamic mapping is enabled. If you disable dynamic mapping, you must specify the fields to index. To learn more about dynamic and static mappings, see [Review Atlas Search Index Syntax](https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#std-label-ref-index-definitions).",
   "type": "object",
   "properties": {
     "dynamic": {
-      "type": "boolean"
+      "type": "boolean",
+      "markdownDescription": "Flag that indicates whether the index uses dynamic or static mappings. Required if `mappings.fields` is omitted.",
+      "defaultSnippets": [
+        {
+          "label": "dynamic",
+          "body": true
+        }
+      ]
     },
     "fields": {
       "type": "object",
+      "markdownDescription": "One or more field specifications for the Atlas Search index. Required **only** if `mappings.dynamic` is omitted or set to `false`.",
       "properties": {
-
       }
     }
   },
