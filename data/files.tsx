@@ -5,8 +5,7 @@ const basicIndexDefinitionJSON = `{
 }
 `;
 
-const intermediateIndexDefinitionJSON = `
-{
+const intermediateIndexDefinitionJSON = `{
   "analyzer": "lucene.simple",
   "searchAnalyzer": "lucene.english",
   "mappings": {
