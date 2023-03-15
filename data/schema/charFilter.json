@@ -1,57 +1,74 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "anyOf": [
+  "oneOf": [
     {"$ref": "#/definitions/htmlStrip"},
     {"$ref": "#/definitions/icuNormalize"},
-    {"$ref": "#/definitions/mappings"},
+    {"$ref": "#/definitions/mapping"},
     {"$ref": "#/definitions/persian"}
   ],
   "definitions": {
     "htmlStrip": {
       "type": "object",
+      "markdownDescription": "The `htmlStrip` character filter strips out HTML constructs.",
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["htmlStrip"]
+          "enum": ["htmlStrip"],
+          "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `htmlStrip`."
         },
         "ignoredTags": {
           "type": "array",
+          "description": "List that contains the HTML tags to exclude from filtering.",
           "items": {
             "type": "string"
           }
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": ["type", "ignoredTags"]
     },
     "icuNormalize": {
       "type": "object",
+      "markdownDescription": "The `icuNormalize` character filter normalizes text with the [ICU](http://site.icu-project.org/) Normalizer. It is based on Lucene's [ICUNormalizer2CharFilter](https://lucene.apache.org/core/8_3_0/analyzers-icu/org/apache/lucene/analysis/icu/ICUNormalizer2CharFilter.html).",
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["icuNormalize"]
+          "enum": ["icuNormalize"],
+          "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `icuNormalize`."
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": ["type"]
     },
-    "mappings": {
+    "mapping": {
       "type": "object",
+      "markdownDescription": "The `mapping` character filter applies user-specified normalization mappings to characters. It is based on Lucene's [MappingCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html).",
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["mappings"]
+          "enum": ["mapping"],
+          "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `mapping`"
         },
         "mappings":{
-          "type": "object"
+          "type": "object",
+          "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`."
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": ["type","mappings"]
     },
     "persian": {
       "type": "object",
+      "markdownDescription": "The `persian` character filter replaces instances of [zero-width non-joiner](https://en.wikipedia.org/wiki/Zero-width_non-joiner) with the space character. This character filter is based on Lucene's [PersianCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/fa/PersianCharFilter.html)",
       "properties": {
         "type": {
           "type": "string",
           "enum": ["persian"]
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": ["type"]
     }
   }
 }

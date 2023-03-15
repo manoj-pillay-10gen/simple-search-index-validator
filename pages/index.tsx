@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Editor, { useMonaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import files from "../data/files";
