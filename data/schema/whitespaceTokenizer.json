@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "markdownDescription": "The `whitespace` tokenizer tokenizes based on occurrences of whitespace between words.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["whitespace"],
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`."
+    },
+    "maxTokenLength": {
+      "type": "integer",
+      "markdownDescription": "Maximum length for a single token. Tokens greater than this length are split at `maxTokenLength` into multiple tokens.",
+      "default": 255
+    }
+  },
+  "required": ["type"]
+}
