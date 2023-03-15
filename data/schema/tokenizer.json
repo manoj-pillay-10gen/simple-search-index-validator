@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A custom analyzer's tokenizer determines how Atlas Search splits up text into discrete chunks for indexing.",
   "type": "object",
   "anyOf": [
     { "$ref": "edgeGramTokenizer" },
