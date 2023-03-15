@@ -1,12 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "markdownDescription": "The `standard` tokenizer tokenizes based on word break rules from the [Unicode Text Segmentation algorithm](https://www.unicode.org/L2/L2019/19034-uax29-34-draft.pdf).",
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["standard"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `standard`"
+      "enum": ["whitespace"],
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`."
     },
     "maxTokenLength": {
       "type": "integer",

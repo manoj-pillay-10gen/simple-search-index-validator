@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "markdownDescription": "The `regexSplit` tokenizer splits tokens with a regular-expression based delimiter.",
   "properties": {
     "type": {
       "type": "string",

@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "The keyword tokenizer tokenizes the entire input as a single token.",
   "properties": {
     "type": {
       "type": "string",

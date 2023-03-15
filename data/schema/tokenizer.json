@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "A custom analyzer's tokenizer determines how Atlas Search splits up text into discrete chunks for indexing.",
+  "markdownDescription": "A custom analyzer's tokenizer determines how Atlas Search splits up text into discrete chunks for indexing.",
   "type": "object",
   "oneOf": [
-    { "$ref": "edgeGramTokenizer" },
-    { "$ref": "keywordTokenizer" },
-    { "$ref": "nGramTokenizer" },
-    { "$ref": "regexCaptureGroupTokenizer"},
-    { "$ref": "regexSplitTokenizer"},
-    { "$ref": "standardTokenizer"},
-    { "$ref": "uaxUrlEmailTokenizer"},
-    { "$ref": "whitespaceTokenizer"}
+    { "$ref": "tokenizerEdgeGram" },
+    { "$ref": "tokenizerKeyword" },
+    { "$ref": "tokenizerNGram" },
+    { "$ref": "tokenizerRegexCaptureGroup"},
+    { "$ref": "tokenizerRegexSplit"},
+    { "$ref": "tokenizerStandard"},
+    { "$ref": "tokenizerUaxUrlEmail"},
+    { "$ref": "tokenizerWhitespace"}
   ]
 }

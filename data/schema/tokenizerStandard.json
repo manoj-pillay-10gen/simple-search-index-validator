@@ -1,12 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "markdownDescription": "The `whitespace` tokenizer tokenizes based on occurrences of whitespace between words.",
   "type": "object",
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["whitespace"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`."
+      "enum": ["standard"],
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `standard`"
     },
     "maxTokenLength": {
       "type": "integer",

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["uaxUrlEmail"],
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `uaxUrlEmail`"
+    },
+    "maxTokenLength": {
+      "type": "integer",
+      "markdownDescription": "Maximum number of characters in one token.",
+      "default": 255
+    }
+  },
+  "required": ["type"]
+}

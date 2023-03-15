@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "markdownDescription": "The edgeGram tokenizer tokenizes input from the left side, or \"edge\", of a text input into n-grams of given sizes. You can't use a custom analyzer with edgeGram tokenizer in the analyzer field for [synonym](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-ref) or [autocomplete field mapping definitions](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-fts-field-mappings).",
   "properties": {
     "type": {
       "type": "string",
