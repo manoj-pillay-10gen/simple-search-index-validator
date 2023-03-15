@@ -8,5 +8,6 @@
       "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `keyword`."
     }
   },
-  "required": ["type"]
+  "required": ["type"],
+  "additionalProperties": false
 }

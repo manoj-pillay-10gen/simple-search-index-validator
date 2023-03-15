@@ -15,5 +15,6 @@
       "markdownDescription": "Number of characters to include in the longest token created."
     }
   },
-  "required": ["type","maxGram","minGram"]
+  "required": ["type","maxGram","minGram"],
+  "additionalProperties": false
 }

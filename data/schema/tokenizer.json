@@ -3,7 +3,7 @@
   "markdownDescription": "A custom analyzer's tokenizer determines how Atlas Search splits up text into discrete chunks for indexing.",
   "type": "object",
   "oneOf": [
-    { "$ref": "tokenizerEdgeGram" },
+    { "$ref": "tokenizerEdgeGram"},
     { "$ref": "tokenizerKeyword" },
     { "$ref": "tokenizerNGram" },
     { "$ref": "tokenizerRegexCaptureGroup"},

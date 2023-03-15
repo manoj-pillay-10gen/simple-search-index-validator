@@ -16,5 +16,6 @@
       "description": "Index of the character group within the matching expression to extract into tokens. Use 0 to extract all character groups."
     }
   },
-  "required": ["type","pattern","group"]
+  "required": ["type","pattern","group"],
+  "additionalProperties": false
 }
