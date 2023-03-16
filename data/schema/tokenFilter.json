@@ -1,4 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object"
+  "type": "object",
+  "oneOf": [
+    { "$ref": "tokenFilterAsciiFolding" },
+    {
+      "$ref": "tokenFilterDaitchMokotoffSoundex"
+    },
+    {
+      "$ref": "tokenFilterEdgeGram"
+    }
+  ]
 }
