@@ -19,6 +19,7 @@
     "termNotInBounds": {
       "type": "string",
       "markdownDescription": "String that specifies whether to index tokens shorter than `minGram` or longer than `maxGram`. Accepted values are:\n\n- `include` \n\n- `omit`\n\nIf `include` is specified, tokens shorter than `minGram` or longer than `maxGram` are indexed as-is. If `omit` is specified, those tokens are not indexed.",
+      "enum": ["include", "omit"],
       "default": "omit"
     }
   },

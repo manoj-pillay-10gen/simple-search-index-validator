@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "lowerCase",
+  "title": "lowercase",
   "properties": {
     "type": {
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
-      "enum": ["lowerCase"]
+      "enum": ["lowercase"]
     }
   },
   "required": ["type"],
