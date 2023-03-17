@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "wordDelimiterGraph",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "enum": ["wordDelimiterGraph"]
+    },
+    "delimiterOptions": {
+      "type": "object",
+      "description": "Object that contains the rules that determine how to split words into sub-words.",
+      "properties": {
+        "generateWordParts": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to split tokens based on sub-words. For examples, if `true`, this option splits `PowerShot` into `Power` and `Shot`.",
+          "default": true
+        },
+        "generateNumberParts": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to split tokens based on sub-numbers. For examples, if `true`, this option splits `100-2` into `100` and `2`.",
+          "default": true
+        },
+        "concatenateWords": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to concatenate runs of sub-words. For examples, if `true`, this option concatenates `wi-fi` into `wifi`. Also see [using flattenGraph tokenFilter together with this option](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#footnote-1)",
+          "default": false
+        },
+        "concatenateNumbers": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to concatenate runs of sub-numbers. For examples, if `true`, this option concatenates `100-2` into `1002`. Also see [using flattenGraph tokenFilter together with this option](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#footnote-1)",
+          "default": false
+        },
+        "concatenateAll": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to concatenate runs. For examples, if `true`, this option concatenates `wi-fi-100-2` into `wifi1002`. Also see [using flattenGraph tokenFilter together with this option](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#footnote-1)",
+          "default": false
+        },
+        "preserveOriginal": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to generate tokens of the original words. Also see [using flattenGraph tokenFilter together with this option](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#footnote-1)",
+          "default": true
+        },
+        "splitOnCaseChange": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to split tokens based on letter-case transitions. For examples, if `true`, this option splits `camelCase` into `camel` and `Case`.",
+          "default": true
+        },
+        "splitOnNumerics": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to split tokens based on letter-number transitions. For examples, if `true`, this option splits `g2g` into `g`, `2`, and `g`.",
+          "default": true
+        },
+        "stemEnglishPossessive": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to remove trailing possessives from each sub-word. For examples, if `true`, this option changes `who's` into `who'`.",
+          "default": true
+        },
+        "ignoreKeywords": {
+          "type": "boolean",
+          "markdownDescription": "Flag that indicates whether to skip tokens with the `keyword` attribute set to `true`",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "protectedWords": {
+      "type": "object",
+      "description": "Object that contains options for protected words.",
+      "properties": {
+        "words": {
+          "type": "array",
+          "markdownDescription": "List that contains the tokens to protect from delimination. If you specify `protectedWords`, you must specify this option.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ignoreCase": {
+          "type": "boolean",
+          "description": "Flag that indicates whether to ignore case sensitivity for protected words.",
+          "default": true
+        }
+      },
+      "required": ["words"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

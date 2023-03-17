@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "shingle",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "enum": ["shingle"]
+    },
+    "minShingleSize" : {
+      "type": "integer",
+      "markdownDescription": "Minimum number of tokens per shingle. Must be less than or equal to `maxShingleSize`."
+    },
+    "maxShingleSize" : {
+      "type": "integer",
+      "markdownDescription": "Maximum number of tokens per shingle. Must be greater than or equal to `minShingleSize`."
+    }
+  },
+  "required": ["type", "maxShingleSize", "minShingleSize"],
+  "additionalProperties": false
+}

@@ -40,6 +40,30 @@
     },
     {
       "$ref": "tokenFilterRegex"
+    },
+    {
+      "$ref": "tokenFilterReverse"
+    },
+    {
+      "$ref": "tokenFilterShingle"
+    },
+    {
+      "$ref": "tokenFilterSnowballStemming"
+    },
+    {
+      "$ref": "tokenFilterSpanishPluralStemming"
+    },
+    {
+      "$ref": "tokenFilterStempel"
+    },
+    {
+      "$ref": "tokenFilterStopword"
+    },
+    {
+      "$ref": "tokenFilterTrim"
+    },
+    {
+      "$ref": "tokenFilterWordDelimiterGraph"
     }
   ]
 }
