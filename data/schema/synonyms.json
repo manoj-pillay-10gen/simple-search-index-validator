@@ -7,7 +7,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "type": "string",
+          "type": "common#/definitions/non-empty-string",
           "markdownDescription": "Name of the synonym mapping. Name must be unique in the index definition. Value can't be an empty string."
         },
         "source": {
