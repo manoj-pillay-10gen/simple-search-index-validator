@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "englishPossessive",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "enum": ["englishPossessive"]
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

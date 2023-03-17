@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "icuNormalizer",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "enum": ["icuNormalizer"]
+    },
+    "normalizationForm": {
+      type: "string",
+      description: "Normalization form to apply. Accepted values are:\n\n- `nfd` (Canonical Decomposition)\n\n- `nfc` (Canonical Decomposition, followed by Canonical Composition)\n\n- `nfkd` (Compatibility Decomposition)\n\n- `nfkc` (Compatibility Decomposition, followed by Canonical Composition)\n\n To learn more about the supported normalization forms, see \n[Section 1.2: Normalization Forms, UTR#15](https://unicode.org/reports/tr15/#Norm_Forms).",
+      default: "nfc"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

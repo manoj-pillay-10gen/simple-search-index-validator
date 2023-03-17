@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "edgeGram",
+  "title": "nGram",
   "properties": {
     "type": {
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
-      "enum": ["edgeGram"]
+      "enum": ["nGram"]
     },
     "minGram": {
       "type": "integer",

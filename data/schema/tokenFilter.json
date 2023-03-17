@@ -2,12 +2,44 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "oneOf": [
-    { "$ref": "tokenFilterAsciiFolding" },
+    {
+      "$ref": "tokenFilterAsciiFolding"
+    },
     {
       "$ref": "tokenFilterDaitchMokotoffSoundex"
     },
     {
       "$ref": "tokenFilterEdgeGram"
+    },
+    {
+      "$ref": "tokenFilterEnglishPossessive"
+    },
+    {
+      "$ref": "tokenFilterFlattenGraph"
+    },
+    {
+      "$ref": "tokenFilterIcuFolding"
+    },
+    {
+      "$ref": "tokenFilterIcuNormalizer"
+    },
+    {
+      "$ref": "tokenFilterKStemming"
+    },
+    {
+      "$ref": "tokenFilterLength"
+    },
+    {
+      "$ref": "tokenFilterLowerCase"
+    },
+    {
+      "$ref": "tokenFilterNGram"
+    },
+    {
+      "$ref": "tokenFilterPorterStemming"
+    },
+    {
+      "$ref": "tokenFilterRegex"
     }
   ]
 }
