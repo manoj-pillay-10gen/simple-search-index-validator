@@ -37,7 +37,7 @@ export default function Home({ allSchema }) {
 
   const parentSchema = {
     uri: "index", // id of the first schema
-    fileMatch: [fileName], // associate with our model
+    fileMatch: ["basic.json", "intermediate.json"], // associate with our model
     schema: require("../data/schema/index.json"),
   };
 
@@ -70,10 +70,19 @@ export default function Home({ allSchema }) {
           language={file.language}
           defaultValue={file.value}
           options={{
-            readOnly: false,
             cursorBlinking: "blink",
-            fontWeight: "18px",
+            fontSize: "15",
             roundedSelection: false,
+            padding: {
+              top: 10,
+            },
+            suggest: {
+              showWords: false,
+              preview: true,
+              previewMode: "subwordSmart",
+              showInlineDetails: true,
+              showStatusBar: true,
+            },
           }}
           theme="vs-dark"
           onMount={handleEditorDidMount}
