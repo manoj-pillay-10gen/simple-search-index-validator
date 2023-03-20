@@ -71,7 +71,7 @@ export default function Home({ allSchema }) {
           defaultValue={file.value}
           options={{
             cursorBlinking: "blink",
-            fontSize: "15",
+            fontSize: 14,
             roundedSelection: false,
             padding: {
               top: 10,
