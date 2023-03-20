@@ -76,6 +76,7 @@ export default function Home({ allSchema }) {
             padding: {
               top: 10,
             },
+            fixedOverflowWidgets: true,
             suggest: {
               showWords: false,
               preview: true,
