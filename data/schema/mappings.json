@@ -8,7 +8,6 @@
       "markdownDescription": "Flag that indicates whether the index uses dynamic or static mappings. Required if `mappings.fields` is omitted.",
       "defaultSnippets": [
         {
-          "label": "dynamic",
           "body": true
         }
       ]
