@@ -10,6 +10,7 @@
   "definitions": {
     "htmlStrip": {
       "type": "object",
+      "title": "htmlStrip",
       "markdownDescription": "The `htmlStrip` character filter strips out HTML constructs.",
       "properties": {
         "type": {
@@ -30,6 +31,7 @@
     },
     "icuNormalize": {
       "type": "object",
+      "title": "icuNormalize",
       "markdownDescription": "The `icuNormalize` character filter normalizes text with the [ICU](http://site.icu-project.org/) Normalizer. It is based on Lucene's [ICUNormalizer2CharFilter](https://lucene.apache.org/core/8_3_0/analyzers-icu/org/apache/lucene/analysis/icu/ICUNormalizer2CharFilter.html).",
       "properties": {
         "type": {
@@ -43,6 +45,7 @@
     },
     "mapping": {
       "type": "object",
+      "title": "mapping",
       "markdownDescription": "The `mapping` character filter applies user-specified normalization mappings to characters. It is based on Lucene's [MappingCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html).",
       "properties": {
         "type": {
@@ -60,6 +63,7 @@
     },
     "persian": {
       "type": "object",
+      "title": "persian",
       "markdownDescription": "The `persian` character filter replaces instances of [zero-width non-joiner](https://en.wikipedia.org/wiki/Zero-width_non-joiner) with the space character. This character filter is based on Lucene's [PersianCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/fa/PersianCharFilter.html)",
       "properties": {
         "type": {
