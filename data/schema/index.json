@@ -41,6 +41,7 @@
       "type": "array",
       "items": { "$ref": "custom_analyzer" },
       "markdownDescription": "**Specify the [Custom Analyzers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/custom/#std-label-custom-analyzers) to use in this index.**",
+      "description": "Define a custom analyzer to suit your specific indexing needs.",
       "minItems": 1
     },
     "storedSource": {
