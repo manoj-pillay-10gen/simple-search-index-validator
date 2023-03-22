@@ -1,22 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Specify synonym mappings to use in your index.",
+  "markdownDescription": "**Synonym mappings to use in your index**. To learn more, see [Define Synonym Mappings in Your Atlas Search Index](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-ref).",
   "type": "array",
   "items": [
     {
       "type": "object",
       "properties": {
         "name": {
-          "type": "common#/definitions/non-empty-string",
-          "markdownDescription": "Name of the synonym mapping. Name must be unique in the index definition. Value can't be an empty string."
+          "$ref": "common#/definitions/non-empty-string",
+          "markdownDescription": "Name of the synonym mapping. Name must be unique in the index definition. Value can't be an empty string.",
+          "description": "Name of the synonym mapping. Name must be unique in the index definition. Value can't be an empty string."
         },
         "source": {
           "type": "object",
           "markdownDescription": "[Source collection](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec) for synonyms. The `source` option takes the `collection` field.",
+          "description": "Specify the source for synonym mappings to use in the search index.",
           "properties": {
             "collection": {
-              "type": "string",
-              "markdownDescription": "Name of the MongoDB collection that is in the same database as the Atlas Search index. Documents in this collection must be in the format described in the [Synonyms Source Collection Documents](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec)."
+              "$ref": "common#/definitions/non-empty-string",
+              "markdownDescription": "Name of the MongoDB collection that is in the same database as the Atlas Search index. Documents in this collection must be in the format described in the [Synonyms Source Collection Documents](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec).",
+              "description": "Specify the name for synonyms collection available in your database to use in this search index."
             }
           },
           "required": [
@@ -24,8 +28,9 @@
           ]
         },
         "analyzer": {
-          "$ref": "common#/definitions/analyzers",
-          "markdownDescription": "Name of the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to use with this synonym mapping."
+          "$ref": "common#/definitions/synonym_analyzers",
+          "description": "Name of the analyzer to use with this synonym mapping.",
+          "markdownDescription": "**Name of the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to use with this synonym mapping**.\n > ***Note***: You can use a synonym mapping to query only fields analyzed with the same analyzer. By default, Atlas Search uses the standard analyzer (`lucene.standard`). \n\n You can use any Atlas Search analyzer \" ***except*** \" the following: \n\n [Language analyzers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/language/#std-label-ref-language-analyzers):\n- ~`lucene.kuromoji`~\n- ~`lucene.cjk`~ \n\n[Custom analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/custom/#std-label-custom-analyzers) tokenizers and token filters:\n\n- ~`nGram` Tokenizer~\n- ~`edgeGram Tokenizer`~\n\n- ~`daitchMokotoffSoundex` Token Filter~\n- ~`nGram` Token Filter~\n- ~`edgeGram` Token Filter~\n- ~`shingle` Token Filter~\n- ~`wordDelimiterGraph` Token Filter~. \n**Note**: To use synonyms with stop words, you must either index the field using the [Standard Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/standard/#std-label-ref-standard-analyzer) or add the synonym entry without the stop word."
         }
       },
       "required": [

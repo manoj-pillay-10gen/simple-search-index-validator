@@ -83,7 +83,15 @@ export default function Home({ allSchema }) {
               previewMode: "subwordSmart",
               showInlineDetails: true,
               showStatusBar: true,
+              showTypeParameters: true,
+              showEnumMembers: false
             },
+            inlineSuggest: {
+              showToolbar: "always",
+              enabled: true,
+              mode: "subwordSmart"
+            },
+            showUnused: true
           }}
           theme="vs-dark"
           onMount={handleEditorDidMount}
