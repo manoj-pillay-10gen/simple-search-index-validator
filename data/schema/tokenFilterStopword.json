@@ -13,11 +13,13 @@
       "items": {
         "type": "string"
       },
-      "markdownDescription": "List that contains the stop words that correspond to the tokens to remove. Value must be one or more stop words."
+      "markdownDescription": "List that contains the stop words that correspond to the tokens to remove. Value must be one or more stop words.",
+      "description": "List that contains the stop words that correspond to the tokens to remove."
     },
     "ignoreCase": {
       "type": "boolean",
       "markdownDescription": "Flag that indicates whether to ignore the case of stop words when filtering the tokens to remove. The value can be one of the following:\n\n- `true` : ignore case and remove all tokens that match the specified stop words\n\n- `false` : be case-sensitive and remove only tokens that exactly match the specified case\n\nIf omitted, defaults to `true`.",
+      "description": "Specify whether to ignore the case of stop words when filtering the tokens to remove.",
       "default": true
     }
   },

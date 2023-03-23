@@ -19,6 +19,7 @@
     "matches": {
       "type": "string",
       "markdownDescription": "Acceptable values are:\n\n- `all`\n\n- `first` \n\n If `matches` is set to `all`, replace all matching patterns. Otherwise, replace only the first matching pattern.",
+      "description": "Specify whether to replace all matching occurrences or only the first match.",
       "enum": ["all", "first"]
     }
   },
