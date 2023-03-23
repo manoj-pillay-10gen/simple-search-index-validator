@@ -6,7 +6,7 @@
     "type": {
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
-      "enum": ["snowballStemming"]
+      "const": "snowballStemming"
     },
     "stemmerName": {
       "type": "string",

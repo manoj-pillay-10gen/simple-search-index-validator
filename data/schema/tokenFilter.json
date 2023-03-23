@@ -1,6 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["asciiFolding", "daitchMokotoffSoundex", "edgeGram", "englishPossessive", "flattenGraph", "icuFolding", "icuNormalizer", "kStemming", "length", "lowerCase", "nGram", "porterStemming", "regex", "reverse", "shingle", "snowballStemming", "spanishPluralStemming", "stempel", "stopword", "trim", "wordDelimiterGraph"]
+    }
+  },
+  "required": ["type"],
   "oneOf": [
     {
       "$ref": "tokenFilterAsciiFolding"
