@@ -4,7 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["edgeGram"]
+      "const": "edgeGram",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type.Value must be `edgeGram`.",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "minGram": {
       "type": "integer",

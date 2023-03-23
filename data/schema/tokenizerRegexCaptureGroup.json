@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["regexCaptureGroup"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexCaptureGroup`"
+      "const": "regexCaptureGroup",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexCaptureGroup`",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {
       "type": "string",

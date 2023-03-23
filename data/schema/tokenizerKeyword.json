@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["keyword"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `keyword`."
+      "const": "keyword",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `keyword`.",
+      "description": "Human-readable label that identifies this tokenizer type."
     }
   },
   "required": ["type"],

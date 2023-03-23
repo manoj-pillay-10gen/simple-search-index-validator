@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["whitespace"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`."
+      "const": "whitespace",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`.",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
       "type": "integer",

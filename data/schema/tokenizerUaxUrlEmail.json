@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["uaxUrlEmail"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `uaxUrlEmail`"
+      "const": "uaxUrlEmail",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `uaxUrlEmail`",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
       "type": "integer",

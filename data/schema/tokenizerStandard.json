@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["standard"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `standard`"
+      "const": "standard",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `standard`",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
       "type": "integer",

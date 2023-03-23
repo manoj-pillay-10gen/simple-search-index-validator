@@ -4,8 +4,9 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["regexSplit"],
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexSplit`."
+      "const": "regexSplit",
+      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexSplit`.",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {
       "type": "string",

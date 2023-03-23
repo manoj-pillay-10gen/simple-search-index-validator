@@ -4,7 +4,8 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["nGram"]
+      "const": "nGram",
+      "description": "Human-readable label that identifies this tokenizer type."
     },
     "minGram": {
       "type": "integer",
