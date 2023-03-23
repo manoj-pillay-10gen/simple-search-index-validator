@@ -1,11 +1,15 @@
-const basicIndexDefinitionJSON = `{
+const basicIndexDefinitionJSON = `// Minimal search index definition. 
+// Please customize as required. 
+{
   "mappings": {
     "dynamic": true
   }
 }
 `;
 
-const intermediateIndexDefinitionJSON = `{
+const intermediateIndexDefinitionJSON = `// Search index definition with additional options.
+// Please customize as required.
+{
   "analyzer": "lucene.simple",
   "searchAnalyzer": "lucene.english",
   "mappings": {
