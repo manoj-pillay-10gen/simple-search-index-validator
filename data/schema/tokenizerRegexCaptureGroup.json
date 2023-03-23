@@ -5,7 +5,6 @@
     "type": {
       "type": "string",
       "const": "regexCaptureGroup",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexCaptureGroup`",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {
@@ -14,7 +13,8 @@
     },
     "group": {
       "type": "integer",
-      "description": "Index of the character group within the matching expression to extract into tokens. Use 0 to extract all character groups."
+      "description": "Index of the character group within the matching expression to extract into tokens. Use 0 to extract all character groups.",
+      "minimum": 0
     }
   },
   "required": ["type","pattern","group"],

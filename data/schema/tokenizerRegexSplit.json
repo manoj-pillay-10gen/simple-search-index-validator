@@ -5,7 +5,6 @@
     "type": {
       "type": "string",
       "const": "regexSplit",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `regexSplit`.",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {

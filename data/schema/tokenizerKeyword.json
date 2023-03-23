@@ -5,7 +5,6 @@
     "type": {
       "type": "string",
       "const": "keyword",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `keyword`.",
       "description": "Human-readable label that identifies this tokenizer type."
     }
   },

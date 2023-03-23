@@ -5,13 +5,14 @@
     "type": {
       "type": "string",
       "const": "whitespace",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `whitespace`.",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
       "type": "integer",
       "markdownDescription": "Maximum length for a single token. Tokens greater than this length are split at `maxTokenLength` into multiple tokens.",
-      "default": 255
+      "description": "Maximum length for a single token. Tokens greater than this length are split at the specified length into multiple tokens.",
+      "default": 255,
+      "minimum": 1
     }
   },
   "required": ["type"],

@@ -5,16 +5,17 @@
     "type": {
       "type": "string",
       "const": "edgeGram",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type.Value must be `edgeGram`.",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "minGram": {
       "type": "integer",
-      "markdownDescription": "Number of characters to include in the shortest token created."
+      "description": "Number of characters to include in the shortest token created.",
+      "minimum": 0
     },
     "maxGram": {
       "type": "integer",
-      "markdownDescription": "Number of characters to include in the longest token created."
+      "description": "Number of characters to include in the longest token created.",
+      "minimum": 0
     }
   },
   "required": ["type","maxGram","minGram"],

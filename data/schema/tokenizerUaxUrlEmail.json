@@ -5,13 +5,14 @@
     "type": {
       "type": "string",
       "const": "uaxUrlEmail",
-      "markdownDescription": "Human-readable label that identifies this tokenizer type. Value must be `uaxUrlEmail`",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
       "type": "integer",
-      "markdownDescription": "Maximum number of characters in one token.",
-      "default": 255
+      "markdownDescription": "Maximum length for a single token. Tokens greater than this length are split at `maxTokenLength` into multiple tokens.",
+      "description": "Maximum length for a single token. Tokens greater than this length are split at the specified length into multiple tokens.",
+      "default": 255,
+      "minimum": 1
     }
   },
   "required": ["type"],
