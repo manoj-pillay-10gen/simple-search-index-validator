@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Specify synonym mappings to use in your index.",
   "markdownDescription": "**Synonym mappings to use in your index**. To learn more, see [Define Synonym Mappings in Your Atlas Search Index](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-ref).",
   "type": "array",
