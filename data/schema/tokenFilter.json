@@ -4,10 +4,34 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["asciiFolding", "daitchMokotoffSoundex", "edgeGram", "englishPossessive", "flattenGraph", "icuFolding", "icuNormalizer", "kStemming", "length", "lowercase", "nGram", "porterStemming", "regex", "reverse", "shingle", "snowballStemming", "spanishPluralStemming", "stempel", "stopword", "trim", "wordDelimiterGraph"]
+      "enum": [
+        "asciiFolding",
+        "daitchMokotoffSoundex",
+        "edgeGram",
+        "englishPossessive",
+        "flattenGraph",
+        "icuFolding",
+        "icuNormalizer",
+        "kStemming",
+        "length",
+        "lowercase",
+        "nGram",
+        "porterStemming",
+        "regex",
+        "reverse",
+        "shingle",
+        "snowballStemming",
+        "spanishPluralStemming",
+        "stempel",
+        "stopword",
+        "trim",
+        "wordDelimiterGraph"
+      ]
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "oneOf": [
     {
       "$ref": "tokenFilterAsciiFolding"

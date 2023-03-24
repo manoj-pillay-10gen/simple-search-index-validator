@@ -18,16 +18,19 @@
       "type": "object",
       "description": "One or more field specifications for the Atlas Search index. Required only if `mappings.dynamic` is omitted or set to `false`.",
       "markdownDescription": "**Field specifications for the Atlas Search index**\n\n Required only if dynamic mapping is disabled. Specifies the fields that you would like to index. To learn more, see [Define Field Mappings](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-fts-field-mappings).",
-      "properties": {
-      }
+      "properties": {}
     }
   },
   "anyOf": [
     {
-      "required": ["dynamic"]
+      "required": [
+        "dynamic"
+      ]
     },
     {
-      "required": ["fields"]
+      "required": [
+        "fields"
+      ]
     }
   ]
 }

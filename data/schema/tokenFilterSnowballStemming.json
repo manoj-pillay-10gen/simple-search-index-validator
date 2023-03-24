@@ -12,9 +12,38 @@
       "type": "string",
       "markdownDescription": "The following values are valid:\n\n- `arabic`\n\n- `armenian`\n\n- `basque`\n\n- `catalan`\n\n- `danish`\n\n- `dutch`\n\n- `english`\n\n- `estonian`\n\n- `finnish`\n\n- `french`\n\n- `german`\n\n- `german2` (Alternative German language stemmer. Handles the umlaut by expanding ü to ue in most contexts.)\n\n- `hungarian`\n\n- `irish`\n\n- `italian`\n\n- `kp` (Kraaij-Pohlmann stemmer, an alternative stemmer for Dutch.)\n\n- `lithuanian`\n\n- `lovins` (The first-ever published \"Lovins JB\" stemming algorithm.)\n\n- `norwegian`\n\n- `porter` (The original Porter English stemming algorithm.)\n\n- `portuguese`\n\n- `romanian`\n\n- `russian`\n\n- `spanish`\n\n- `swedish`\n\n- `turkish`",
       "description": "Specify a stemmer to use.",
-      "enum": ["arabic", "armenian", "basque", "catalan", "danish", "dutch", "english", "estonian", "finnish", "french", "german", "german2" , "hungarian", "irish", "italian", "kp", "lithuanian", "lovins", "norwegian", "porter", "portuguese", "romanian", "russian", "spanish", "swedish", "turkish"]
+      "enum": [
+        "arabic",
+        "armenian",
+        "basque",
+        "catalan",
+        "danish",
+        "dutch",
+        "english",
+        "estonian",
+        "finnish",
+        "french",
+        "german",
+        "german2",
+        "hungarian",
+        "irish",
+        "italian",
+        "kp",
+        "lithuanian",
+        "lovins",
+        "norwegian",
+        "porter",
+        "portuguese",
+        "romanian",
+        "russian",
+        "spanish",
+        "swedish",
+        "turkish"
+      ]
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "additionalProperties": false
 }

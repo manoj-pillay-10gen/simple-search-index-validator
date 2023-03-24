@@ -18,6 +18,10 @@
       "minimum": 0
     }
   },
-  "required": ["type","maxGram","minGram"],
+  "required": [
+    "type",
+    "maxGram",
+    "minGram"
+  ],
   "additionalProperties": false
 }

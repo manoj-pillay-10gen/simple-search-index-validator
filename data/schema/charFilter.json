@@ -4,15 +4,30 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["htmlStrip", "icuNormalize", "mapping", "persian"]
+      "enum": [
+        "htmlStrip",
+        "icuNormalize",
+        "mapping",
+        "persian"
+      ]
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "oneOf": [
-    {"$ref": "#/definitions/htmlStrip"},
-    {"$ref": "#/definitions/icuNormalize"},
-    {"$ref": "#/definitions/mapping"},
-    {"$ref": "#/definitions/persian"}
+    {
+      "$ref": "#/definitions/htmlStrip"
+    },
+    {
+      "$ref": "#/definitions/icuNormalize"
+    },
+    {
+      "$ref": "#/definitions/mapping"
+    },
+    {
+      "$ref": "#/definitions/persian"
+    }
   ],
   "definitions": {
     "htmlStrip": {
@@ -35,7 +50,10 @@
         }
       },
       "additionalProperties": false,
-      "required": ["type", "ignoredTags"]
+      "required": [
+        "type",
+        "ignoredTags"
+      ]
     },
     "icuNormalize": {
       "type": "object",
@@ -50,7 +68,9 @@
         }
       },
       "additionalProperties": false,
-      "required": ["type"]
+      "required": [
+        "type"
+      ]
     },
     "mapping": {
       "type": "object",
@@ -63,13 +83,16 @@
           "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `mapping`",
           "description": "Human-readable label that identifies this character filter type."
         },
-        "mappings":{
+        "mappings": {
           "type": "object",
           "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`."
         }
       },
       "additionalProperties": false,
-      "required": ["type","mappings"]
+      "required": [
+        "type",
+        "mappings"
+      ]
     },
     "persian": {
       "type": "object",
@@ -84,7 +107,9 @@
         }
       },
       "additionalProperties": false,
-      "required": ["type"]
+      "required": [
+        "type"
+      ]
     }
   }
 }

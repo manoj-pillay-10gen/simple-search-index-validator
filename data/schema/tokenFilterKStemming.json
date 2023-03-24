@@ -9,6 +9,8 @@
       "const": "kStemming"
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "additionalProperties": false
 }

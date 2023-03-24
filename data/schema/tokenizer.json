@@ -4,18 +4,45 @@
   "properties": {
     "type": {
       "type": "string",
-      "enum": ["edgeGram", "keyword", "nGram", "regexCaptureGroup", "regexSplit", "standard", "uaxUrlEmail", "whitespace"]
+      "enum": [
+        "edgeGram",
+        "keyword",
+        "nGram",
+        "regexCaptureGroup",
+        "regexSplit",
+        "standard",
+        "uaxUrlEmail",
+        "whitespace"
+      ]
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "oneOf": [
-    { "$ref": "tokenizerEdgeGram"},
-    { "$ref": "tokenizerKeyword" },
-    { "$ref": "tokenizerNGram" },
-    { "$ref": "tokenizerRegexCaptureGroup"},
-    { "$ref": "tokenizerRegexSplit"},
-    { "$ref": "tokenizerStandard"},
-    { "$ref": "tokenizerUaxUrlEmail"},
-    { "$ref": "tokenizerWhitespace"}
+    {
+      "$ref": "tokenizerEdgeGram"
+    },
+    {
+      "$ref": "tokenizerKeyword"
+    },
+    {
+      "$ref": "tokenizerNGram"
+    },
+    {
+      "$ref": "tokenizerRegexCaptureGroup"
+    },
+    {
+      "$ref": "tokenizerRegexSplit"
+    },
+    {
+      "$ref": "tokenizerStandard"
+    },
+    {
+      "$ref": "tokenizerUaxUrlEmail"
+    },
+    {
+      "$ref": "tokenizerWhitespace"
+    }
   ]
 }

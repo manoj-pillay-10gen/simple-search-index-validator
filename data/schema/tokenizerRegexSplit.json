@@ -12,6 +12,9 @@
       "description": "Regular expression to match against"
     }
   },
-  "required": ["type","pattern"],
+  "required": [
+    "type",
+    "pattern"
+  ],
   "additionalProperties": false
 }

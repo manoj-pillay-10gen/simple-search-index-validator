@@ -23,6 +23,9 @@
       "default": true
     }
   },
-  "required": ["type", "tokens"],
+  "required": [
+    "type",
+    "tokens"
+  ],
   "additionalProperties": false
 }

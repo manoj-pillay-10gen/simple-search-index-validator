@@ -17,6 +17,10 @@
       "minimum": 0
     }
   },
-  "required": ["type","pattern","group"],
+  "required": [
+    "type",
+    "pattern",
+    "group"
+  ],
   "additionalProperties": false
 }

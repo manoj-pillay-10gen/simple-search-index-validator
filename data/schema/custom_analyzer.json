@@ -16,7 +16,6 @@
       "items": {
         "$ref": "charFilter"
       },
-      "uniqueItems": true,
       "minItems": 1
     },
     "tokenizer": {
@@ -31,7 +30,6 @@
       "items": {
         "$ref": "tokenFilter"
       },
-      "uniqueItems": true,
       "minItems": 1
     }
   },

@@ -107,10 +107,9 @@
       "required": true,
       "default": "lucene.standard"
     },
-    "non-empty-string" : {
+    "non-empty-string": {
       "type": "string",
       "minLength": 1
     }
-
   }
 }

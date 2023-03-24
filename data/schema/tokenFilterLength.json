@@ -23,6 +23,8 @@
       "default": 255
     }
   },
-  "required": ["type"],
+  "required": [
+    "type"
+  ],
   "additionalProperties": false
 }
