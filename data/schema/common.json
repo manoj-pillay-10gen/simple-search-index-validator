@@ -53,7 +53,6 @@
         "lucene.ukrainian",
         null
       ],
-      "required": true,
       "default": "lucene.standard"
     },
     "synonym_analyzers": {
@@ -104,7 +103,6 @@
         "lucene.ukrainian",
         null
       ],
-      "required": true,
       "default": "lucene.standard"
     },
     "non-empty-string": {
