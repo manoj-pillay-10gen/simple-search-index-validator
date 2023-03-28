@@ -85,7 +85,10 @@
         },
         "mappings": {
           "type": "object",
-          "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`."
+          "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`.",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false,
