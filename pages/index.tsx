@@ -84,6 +84,8 @@ export default function Home({ allSchema }) {
       validate: true,
       schemaValidation: "error",
       schemas: allSchema,
+      allowComments: true,
+      trailingCommas: "ignore",
     });
     editorRef.current = editor;
   }

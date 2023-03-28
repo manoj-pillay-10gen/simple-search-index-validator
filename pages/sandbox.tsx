@@ -76,6 +76,7 @@ export default function Home({ allSchema }) {
             padding: {
               top: 10,
             },
+            automaticLayout: true,
             fixedOverflowWidgets: true,
             suggest: {
               showWords: false,
@@ -84,14 +85,14 @@ export default function Home({ allSchema }) {
               showInlineDetails: true,
               showStatusBar: true,
               showTypeParameters: true,
-              showEnumMembers: false
+              showEnumMembers: false,
             },
             inlineSuggest: {
               showToolbar: "always",
               enabled: true,
-              mode: "subwordSmart"
+              mode: "subwordSmart",
             },
-            showUnused: true
+            showUnused: true,
           }}
           theme="vs-dark"
           onMount={handleEditorDidMount}
@@ -120,7 +121,7 @@ export default function Home({ allSchema }) {
       schemaValidation: "error",
       schemas: allSchema,
       allowComments: true,
-      trailingCommas: "ignore"
+      trailingCommas: "ignore",
     });
     editorRef.current = editor;
   }
