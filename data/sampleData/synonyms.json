@@ -16,5 +16,8 @@
         "collection": "synonyms"
       }
     }
-  ]
+  ],
+  "collectionName": "myCollection",
+  "database": "myDatabase",
+  "name": "default"
 }
