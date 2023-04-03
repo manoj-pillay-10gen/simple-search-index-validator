@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/charFilter.json",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "charFilter/htmlStrip.json"
+    },
+    {
+      "$ref": "charFilter/icuNormalize.json"
+    },
+    {
+      "$ref": "charFilter/mapping.json"
+    },
+    {
+      "$ref": "charFilter/persian.json"
+    }
+  ]
+}

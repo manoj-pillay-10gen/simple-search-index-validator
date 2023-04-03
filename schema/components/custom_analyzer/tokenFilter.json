@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter.json",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "tokenFilter/asciiFolding.json"
+    },
+    {
+      "$ref": "tokenFilter/daitchMokotoffSoundex.json"
+    },
+    {
+      "$ref": "tokenFilter/edgeGram.json"
+    },
+    {
+      "$ref": "tokenFilter/englishPossessive.json"
+    },
+    {
+      "$ref": "tokenFilter/flattenGraph.json"
+    },
+    {
+      "$ref": "tokenFilter/icuFolding.json"
+    },
+    {
+      "$ref": "tokenFilter/icuNormalizer.json"
+    },
+    {
+      "$ref": "tokenFilter/kStemming.json"
+    },
+    {
+      "$ref": "tokenFilter/length.json"
+    },
+    {
+      "$ref": "tokenFilter/lowercase.json"
+    },
+    {
+      "$ref": "tokenFilter/nGram.json"
+    },
+    {
+      "$ref": "tokenFilter/porterStemming.json"
+    },
+    {
+      "$ref": "tokenFilter/regex.json"
+    },
+    {
+      "$ref": "tokenFilter/reverse.json"
+    },
+    {
+      "$ref": "tokenFilter/shingle.json"
+    },
+    {
+      "$ref": "tokenFilter/snowballStemming.json"
+    },
+    {
+      "$ref": "tokenFilter/spanishPluralStemming.json"
+    },
+    {
+      "$ref": "tokenFilter/stempel.json"
+    },
+    {
+      "$ref": "tokenFilter/stopword.json"
+    },
+    {
+      "$ref": "tokenFilter/trim.json"
+    },
+    {
+      "$ref": "tokenFilter/wordDelimiterGraph.json"
+    }
+  ]
+}

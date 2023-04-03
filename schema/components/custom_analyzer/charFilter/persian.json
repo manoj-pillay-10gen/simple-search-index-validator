@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/charFilter/persian.json",
+  "type": "object",
+  "title": "persian",
+  "markdownDescription": "The `persian` character filter replaces instances of [zero-width non-joiner](https://en.wikipedia.org/wiki/Zero-width_non-joiner) with the space character. This character filter is based on Lucene's [PersianCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/fa/PersianCharFilter.html)",
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "persian",
+      "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `persian`",
+      "description": "Human-readable label that identifies this character filter type."
+    }
+  },
+  "additionalProperties": false,
+  "required": ["type"]
+}

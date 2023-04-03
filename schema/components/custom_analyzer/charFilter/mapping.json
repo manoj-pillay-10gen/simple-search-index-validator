@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/charFilter/mapping.json",
+  "type": "object",
+  "title": "mapping",
+  "markdownDescription": "The `mapping` character filter applies user-specified normalization mappings to characters. It is based on Lucene's [MappingCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html).",
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "mapping",
+      "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `mapping`",
+      "description": "Human-readable label that identifies this character filter type."
+    },
+    "mappings": {
+      "type": "object",
+      "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["type", "mappings"]
+}

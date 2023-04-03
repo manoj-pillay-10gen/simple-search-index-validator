@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/reverse.json",
+  "type": "object",
+  "title": "reverse",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "reverse"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

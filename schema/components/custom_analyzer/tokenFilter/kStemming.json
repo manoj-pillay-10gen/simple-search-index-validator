@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/kStemming.json",
+  "type": "object",
+  "title": "kStemming",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "kStemming"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

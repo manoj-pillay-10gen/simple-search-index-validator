@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/icuFolding.json",
+  "type": "object",
+  "title": "icuFolding",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "icuFolding"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

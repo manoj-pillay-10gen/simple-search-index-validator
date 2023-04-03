@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/charFilter/htmlStrip.json",
+  "type": "object",
+  "title": "htmlStrip",
+  "markdownDescription": "The `htmlStrip` character filter strips out HTML constructs.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "htmlStrip",
+      "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `htmlStrip`.",
+      "description": "Human-readable label that identifies this character filter type."
+    },
+    "ignoredTags": {
+      "type": "array",
+      "description": "List that contains the HTML tags to exclude from filtering.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["type", "ignoredTags"]
+}

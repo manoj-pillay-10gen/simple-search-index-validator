@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/regex.json",
+  "type": "object",
+  "title": "regex",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "regex"
+    },
+    "pattern": {
+      "type": "string",
+      "description": "Regular expression pattern to apply to each token."
+    },
+    "replacement": {
+      "type": "string",
+      "description": "Replacement string to substitute wherever a matching pattern occurs."
+    },
+    "matches": {
+      "type": "string",
+      "markdownDescription": "Acceptable values are:\n\n- `all`\n\n- `first` \n\n If `matches` is set to `all`, replace all matching patterns. Otherwise, replace only the first matching pattern.",
+      "description": "Specify whether to replace all matching occurrences or only the first match.",
+      "enum": ["all", "first"]
+    }
+  },
+  "required": ["type", "pattern", "replacement", "matches"],
+  "additionalProperties": false
+}

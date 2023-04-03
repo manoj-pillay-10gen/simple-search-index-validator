@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/shingle.json",
+  "type": "object",
+  "title": "shingle",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "shingle"
+    },
+    "minShingleSize": {
+      "type": "integer",
+      "markdownDescription": "Minimum number of tokens per shingle. Must be less than or equal to `maxShingleSize`.",
+      "description": "Minimum number of tokens per shingle.",
+      "minimum": 0
+    },
+    "maxShingleSize": {
+      "type": "integer",
+      "markdownDescription": "Maximum number of tokens per shingle. Must be greater than or equal to `minShingleSize`.",
+      "description": " Maximum number of tokens per shingle.",
+      "minimum": 0
+    }
+  },
+  "required": ["type", "maxShingleSize", "minShingleSize"],
+  "additionalProperties": false
+}

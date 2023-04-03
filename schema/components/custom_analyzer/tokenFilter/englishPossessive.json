@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenFilter/englishPossessive.json",
+  "type": "object",
+  "title": "englishPossessive",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Human-readable label that identifies this token filter type.",
+      "const": "englishPossessive"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

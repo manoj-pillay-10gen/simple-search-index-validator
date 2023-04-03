@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenizer/whitespace.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "whitespace",
+      "description": "Human-readable label that identifies this tokenizer type."
+    },
+    "maxTokenLength": {
+      "type": "integer",
+      "markdownDescription": "Maximum length for a single token. Tokens greater than this length are split at `maxTokenLength` into multiple tokens.",
+      "description": "Maximum length for a single token. Tokens greater than this length are split at the specified length into multiple tokens.",
+      "default": 255,
+      "minimum": 1
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

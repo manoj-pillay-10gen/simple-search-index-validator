@@ -15,10 +15,7 @@ export async function getStaticProps() {
       uri: schema.id,
       schema: JSON.parse(schema.contentJson),
     };
-    // console.log(JSON.stringify(schemaDef));
-    if (schema.id !== "index") {
-      allSchema.push(schemaDef);
-    }
+    allSchema.push(schemaDef);
   }
   return {
     props: {
@@ -36,9 +33,8 @@ export default function Home({ allSchema }) {
   let nextId = 0;
 
   const parentSchema = {
-    uri: "index", // id of the first schema
+    uri: "index.json", // id of the first schema
     fileMatch: ["basic.json", "intermediate.json"], // associate with our model
-    schema: require("../data/schema/index.json"),
   };
 
   useEffect(() => {

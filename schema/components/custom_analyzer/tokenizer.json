@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/custom_analyzer/tokenizer.json",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "tokenizer/edgeGram.json"
+    },
+    {
+      "$ref": "tokenizer/keyword.json"
+    },
+    {
+      "$ref": "tokenizer/nGram.json"
+    },
+    {
+      "$ref": "tokenizer/regexCaptureGroup.json"
+    },
+    {
+      "$ref": "tokenizer/regexSplit.json"
+    },
+    {
+      "$ref": "tokenizer/standard.json"
+    },
+    {
+      "$ref": "tokenizer/uaxUrlEmail.json"
+    },
+    {
+      "$ref": "tokenizer/whitespace.json"
+    }
+  ]
+}
