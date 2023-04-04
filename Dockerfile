@@ -29,6 +29,7 @@ RUN npm ci --only=production
 
 # copy public files
 COPY --from=development /usr/src/app/data /usr/src/app/data
+COPY --from=development /usr/src/app/schema /usr/src/app/schema
 
 # copy builded next app from the previous `development` step
 COPY --from=development /usr/src/app/.next /usr/src/app/.next
