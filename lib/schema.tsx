@@ -18,6 +18,10 @@ export function getAllSchemaIds() {
 export function walk(dir: string): string[] {
   return fs
     .readdirSync(dir, { withFileTypes: true })
+    .filter(
+      (filename) =>
+        path.extname(filename.name) === ".json" || filename.isDirectory()
+    )
     .flatMap((file) =>
       file.isDirectory()
         ? walk(path.join(dir, file.name))
