@@ -38,7 +38,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cd scripts && sh compileSchema.sh"
+      "pre-commit": "cd scripts && sh compileSchema.sh && sh validateSchema.sh"
     }
   }
 }
