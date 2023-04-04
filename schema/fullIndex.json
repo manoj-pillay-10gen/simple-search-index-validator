@@ -4,11 +4,31 @@
   "type": "object",
   "description": "Define your Atlas Search Index",
   "properties": {
+    "name": {
+      "$ref": "components/common.json#/definitions/non-empty-string",
+      "markdownDescription": "**Specify a name for the index**. \n\n In each [namespace](https://www.mongodb.com/docs/manual/reference/limits/#faq-dev-namespace), names of all indexes in the namespace must be unique. If omitted, defaults to `default`.",
+      "description": "Specify a name for the index.",
+      "defaultSnippets": [
+        {
+          "label": "index name",
+          "body": "default"
+        }
+      ],
+      "type": "string"
+    },
     "mappings": {
       "$ref": "components/mappings.json"
     },
     "synonyms": {
       "$ref": "components/synonyms.json"
+    },
+    "database": {
+      "$ref": "components/common.json#/definitions/non-empty-string",
+      "description": "Human readable label that identifies the database to contain the index."
+    },
+    "collectionName": {
+      "$ref": "components/common.json#/definitions/non-empty-string",
+      "description": "Human readable label that identifies the collection being indexed."
     },
     "analyzer": {
       "$ref": "components/common.json#/definitions/analyzers",
@@ -22,9 +42,7 @@
     },
     "analyzers": {
       "type": "array",
-      "items": {
-        "$ref": "components/custom_analyzer.json"
-      },
+      "items": { "$ref": "components/custom_analyzer.json" },
       "markdownDescription": "**Specify the [Custom Analyzers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/custom/#std-label-custom-analyzers) to use in this index.**",
       "description": "Define a custom analyzer to suit your specific indexing needs.",
       "minItems": 1
@@ -35,6 +53,7 @@
       "description": "Specify fields in your documents by storing them on Atlas Search to improve query performance."
     }
   },
-  "required": ["mappings"],
-  "additionalProperties": false
+  "required": ["mappings", "collectionName", "database", "name"],
+  "additionalProperties": false,
+  "definitions": {}
 }
