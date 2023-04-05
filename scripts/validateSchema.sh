@@ -16,7 +16,7 @@ JSON_EDITOR_SAMPLE_DATA_DIR="../data/sampleData/JSONEditorSamples"
 for filename in "${JSON_EDITOR_SAMPLE_DATA_DIR}"/**/*.json; do
   echo "Validating $filename"
   npx ajv validate \
-  -s $SCHEMA_DIR/index.json \
+  -s $SCHEMA_DIR/jsonEditorIndex.json \
   -d $filename \
   -r "$SCHEMA_DIR/components/**/*.json" \
   --strict=false

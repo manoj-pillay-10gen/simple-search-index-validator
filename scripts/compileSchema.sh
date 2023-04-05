@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 npx ajv compile \
-  -s ../schema/index.json \
+  -s ../schema/jsonEditorIndex.json \
   -r "../schema/components/**/*.json" \
   --strict=false
 

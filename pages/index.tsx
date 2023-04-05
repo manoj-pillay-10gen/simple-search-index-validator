@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
-import Layout, { siteTitle } from "../components/layout";
-import Head from "next/head";
+import Layout from "../components/layout";
 import files from "../data/files";
 import { editor } from "monaco-editor";
 import { loadAllSchema } from "../lib/schema";
 import IMarker = editor.IMarker;
+
+import utilStyles from "../styles/utils.module.css";
+import styles from "../components/layout.module.css";
 
 export async function getStaticProps() {
   const res = loadAllSchema();
@@ -33,7 +35,7 @@ export default function Home({ allSchema }) {
   let nextId = 0;
 
   const parentSchema = {
-    uri: "index.json", // id of the first schema
+    uri: "jsonEditorIndex.json", // id of the first schema
     fileMatch: ["basic.json", "intermediate.json"], // associate with our model
   };
 
@@ -43,9 +45,13 @@ export default function Home({ allSchema }) {
 
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <div className={styles.header}>
+        <section>
+          <h3 className={utilStyles.lightText}>
+            Prototype for Atlas Search JSON Editor
+          </h3>
+        </section>
+      </div>
       <section>
         <button
           disabled={fileName === "basic.json"}
