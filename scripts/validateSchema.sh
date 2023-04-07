@@ -9,8 +9,8 @@ for filename in "${FULL_INDEX_SAMPLE_DATA_DIR}"/**/*.json; do
   -s $SCHEMA_DIR/fullIndex.json \
   -d $filename \
   -r "$SCHEMA_DIR/components/**/*.json" \
-  --strict=false
-done
+  --strict=false || exit 1
+done || exit 1
 
 JSON_EDITOR_SAMPLE_DATA_DIR="../data/sampleData/JSONEditorSamples"
 for filename in "${JSON_EDITOR_SAMPLE_DATA_DIR}"/**/*.json; do
@@ -19,5 +19,5 @@ for filename in "${JSON_EDITOR_SAMPLE_DATA_DIR}"/**/*.json; do
   -s $SCHEMA_DIR/jsonEditorIndex.json \
   -d $filename \
   -r "$SCHEMA_DIR/components/**/*.json" \
-  --strict=false > /dev/null
-done
+  --strict=false || exit 1
+done || exit 1
