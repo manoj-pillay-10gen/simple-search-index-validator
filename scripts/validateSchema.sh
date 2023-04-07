@@ -19,5 +19,5 @@ for filename in "${JSON_EDITOR_SAMPLE_DATA_DIR}"/**/*.json; do
   -s $SCHEMA_DIR/jsonEditorIndex.json \
   -d $filename \
   -r "$SCHEMA_DIR/components/**/*.json" \
-  --strict=false
+  --strict=false > /dev/null
 done
