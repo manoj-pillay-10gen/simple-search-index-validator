@@ -4,14 +4,14 @@
     "fields": {
       "a": {
         "type": "string",
-        "analyzer": "email"
+        "analyzer": "standardized"
       }
     }
   },
   "analyzer": "lucene.english",
   "analyzers": [
     {
-      "name": "email",
+      "name": "standardized",
       "charFilters": [
         {
           "type": "mapping",

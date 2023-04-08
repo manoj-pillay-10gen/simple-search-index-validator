@@ -6,10 +6,15 @@
         "type": "string",
         "analyzer": "lucene.english"
       },
-      "color": {
-        "type": "numberFacet",
-        "representation": "double"
-      }
+      "color": [
+        {
+          "type": "numberFacet",
+          "representation": "int64"
+        },
+        {
+          "type": "dateFacet"
+        }
+      ]
     }
   }
 }

@@ -11,7 +11,7 @@
         "fields": {
           "color": {
             "type": "numberFacet",
-            "representation": "double"
+            "representation": "int64"
           }
         }
       }

@@ -3,7 +3,9 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "tokenization": "edgeGram"
+        "tokenization": "edgeGram",
+        "minGrams": 1,
+        "maxGrams": 4
       }
     }
   }

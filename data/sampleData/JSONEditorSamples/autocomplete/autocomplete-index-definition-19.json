@@ -1,14 +1,9 @@
 {
   "mappings": {
     "fields": {
-      "name": [
-        {
-          "type": "autocomplete"
-        },
-        {
-          "type": "string"
-        }
-      ]
+      "name": {
+        "type": "autocomplete"
+      }
     }
   }
 }

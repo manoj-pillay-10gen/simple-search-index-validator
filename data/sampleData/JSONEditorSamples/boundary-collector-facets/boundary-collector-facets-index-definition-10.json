@@ -9,9 +9,8 @@
       "nested": {
         "type": "document",
         "fields": {
-          "color": {
-            "type": "numberFacet",
-            "representation": "int64"
+          "releaseDate": {
+            "type": "dateFacet"
           }
         }
       }

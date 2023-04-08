@@ -3,8 +3,17 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "tokenization": "edgeGram"
+        "tokenization": "edgeGram",
+        "analyzer": "emailAddressAnalyzer"
       }
     }
-  }
+  },
+  "analyzers": [
+    {
+      "name": "emailAddressAnalyzer",
+      "tokenizer": {
+        "type": "uaxUrlEmail"
+      }
+    }
+  ]
 }

@@ -3,7 +3,8 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "tokenization": "edgeGram"
+        "tokenization": "edgeGram",
+        "analyzer": "lucene.keyword"
       }
     }
   }

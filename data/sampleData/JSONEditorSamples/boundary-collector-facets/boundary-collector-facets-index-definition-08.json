@@ -6,8 +6,14 @@
         "type": "string",
         "analyzer": "lucene.english"
       },
-      "releaseDate": {
-        "type": "dateFacet"
+      "nested": {
+        "type": "document",
+        "fields": {
+          "color": {
+            "type": "numberFacet",
+            "representation": "double"
+          }
+        }
       }
     }
   }

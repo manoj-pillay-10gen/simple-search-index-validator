@@ -2,7 +2,8 @@
   "mappings": {
     "fields": {
       "name": {
-        "type": "autocomplete"
+        "type": "autocomplete",
+        "tokenization": "nGram"
       }
     }
   }

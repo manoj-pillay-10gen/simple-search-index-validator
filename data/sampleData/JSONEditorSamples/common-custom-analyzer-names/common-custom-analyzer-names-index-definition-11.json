@@ -4,14 +4,14 @@
     "fields": {
       "a": {
         "type": "string",
-        "analyzer": "documents"
+        "analyzer": "records"
       }
     }
   },
   "analyzer": "lucene.english",
   "analyzers": [
     {
-      "name": "documents",
+      "name": "records",
       "charFilters": [
         {
           "type": "mapping",

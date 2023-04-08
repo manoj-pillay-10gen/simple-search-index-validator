@@ -1,0 +1,17 @@
+{
+  "storedSource": {
+    "include": [
+      "_id",
+      "x.y.x",
+      "y.x",
+      "z"
+    ]
+  },
+  "mappings": {
+    "fields": {
+      "a": {
+        "type": "string"
+      }
+    }
+  }
+}

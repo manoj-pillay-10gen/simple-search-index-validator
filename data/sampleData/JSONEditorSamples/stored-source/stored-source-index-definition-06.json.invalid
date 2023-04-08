@@ -1,0 +1,26 @@
+{
+  "storedSource": {
+    "include": [
+      "teachers.classes"
+    ]
+  },
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "teachers": [
+        {
+          "type": "embeddedDocuments",
+          "dynamic": false,
+          "fields": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

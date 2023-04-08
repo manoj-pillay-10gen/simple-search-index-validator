@@ -3,7 +3,7 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "tokenization": "nGram"
+        "tokenization": "edgeGram"
       }
     }
   }

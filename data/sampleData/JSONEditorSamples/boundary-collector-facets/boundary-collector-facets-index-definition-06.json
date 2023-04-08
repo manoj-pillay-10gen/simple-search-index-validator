@@ -8,7 +8,13 @@
       },
       "color": {
         "type": "numberFacet",
-        "representation": "double"
+        "representation": "int64"
+      },
+      "size": {
+        "type": "numberFacet"
+      },
+      "releaseDate": {
+        "type": "dateFacet"
       }
     }
   }

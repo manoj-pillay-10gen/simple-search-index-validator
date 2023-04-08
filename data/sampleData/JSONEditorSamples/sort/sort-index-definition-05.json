@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "fields": {
+      "a": {
+        "type": "sortableDateBetaV1"
+      },
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}

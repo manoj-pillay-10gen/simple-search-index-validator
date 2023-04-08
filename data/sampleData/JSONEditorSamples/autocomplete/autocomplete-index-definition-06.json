@@ -3,9 +3,7 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "tokenization": "rightEdgeGram",
-        "minGrams": 10,
-        "maxGrams": 15
+        "foldDiacritics": false
       }
     }
   }

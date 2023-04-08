@@ -6,9 +6,8 @@
         "type": "string",
         "analyzer": "lucene.english"
       },
-      "color": {
-        "type": "numberFacet",
-        "representation": "double"
+      "releaseDate": {
+        "type": "date"
       }
     }
   }

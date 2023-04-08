@@ -3,8 +3,18 @@
     "fields": {
       "name": {
         "type": "autocomplete",
-        "foldDiacritics": false
+        "tokenization": "rightEdgeGram",
+        "analyzer": "splitOnOneTwoThree"
       }
     }
-  }
+  },
+  "analyzers": [
+    {
+      "name": "splitOnOneTwoThree",
+      "tokenizer": {
+        "type": "regexSplit",
+        "pattern": "[123]+"
+      }
+    }
+  ]
 }

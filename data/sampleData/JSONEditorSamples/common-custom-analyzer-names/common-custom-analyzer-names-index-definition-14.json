@@ -4,14 +4,14 @@
     "fields": {
       "a": {
         "type": "string",
-        "analyzer": "normalized"
+        "analyzer": "skus"
       }
     }
   },
   "analyzer": "lucene.english",
   "analyzers": [
     {
-      "name": "normalized",
+      "name": "skus",
       "charFilters": [
         {
           "type": "mapping",

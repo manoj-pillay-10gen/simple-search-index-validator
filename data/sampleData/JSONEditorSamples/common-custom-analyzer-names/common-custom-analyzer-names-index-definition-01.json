@@ -4,14 +4,14 @@
     "fields": {
       "a": {
         "type": "string",
-        "analyzer": "en"
+        "analyzer": "chinese"
       }
     }
   },
   "analyzer": "lucene.english",
   "analyzers": [
     {
-      "name": "en",
+      "name": "chinese",
       "charFilters": [
         {
           "type": "mapping",

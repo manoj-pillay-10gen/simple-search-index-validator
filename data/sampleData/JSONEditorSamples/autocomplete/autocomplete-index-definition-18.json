@@ -2,8 +2,10 @@
   "mappings": {
     "fields": {
       "name": {
-        "type": "autocomplete",
-        "tokenization": "rightEdgeGram"
+        "type": "autocomplete"
+      },
+      "unused": {
+        "type": "string"
       }
     }
   }
