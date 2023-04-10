@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import Editor from "@monaco-editor/react";
-import Layout  from "../components/layout";
+import React, { useRef, useState } from "react";
+import Editor, { OnMount, OnValidate, OnChange } from "@monaco-editor/react";
+import Layout from "../components/layout";
 import files from "../data/files";
-import { editor } from "monaco-editor";
 import { loadAllSchema } from "../lib/schema";
-import IMarker = editor.IMarker;
 import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 
@@ -39,9 +37,38 @@ export default function Home({ allSchema }) {
     fileMatch: ["basic.json", "intermediate.json"], // associate with our model
   };
 
-  useEffect(() => {
-    editorRef.current?.focus();
-  }, [file.name]);
+  const handleEditorDidMount: OnMount = (editor, monaco) => {
+    // here is another way to get monaco instance
+    // you can also store it in `useRef` for further usage
+    allSchema.push(parentSchema);
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      validate: true,
+      schemaValidation: "error",
+      schemas: allSchema,
+      allowComments: true,
+      trailingCommas: "ignore",
+    });
+    editorRef.current = editor;
+  };
+
+  const handleValidate: OnValidate = (markers) => {
+    // model markers
+    let errMessages = markers.map((marker) => {
+      const errMsg = `(Line Number ${marker.startLineNumber}) ${marker.severity}: ${marker.message}`;
+      if (
+        typeof errMsg !== "undefined" &&
+        !errors.some((e) => e.msg === errMsg) &&
+        errMsg !== ""
+      ) {
+        setErrors([{ id: nextId++, msg: errMsg }]);
+      }
+    });
+    console.log(`ErrMessages is ${errMessages}`);
+  };
+
+  const handleEditorChange: OnChange = (value) => {
+    console.log("current value is :", value);
+  };
 
   return (
     <Layout home>
@@ -114,43 +141,17 @@ export default function Home({ allSchema }) {
     </Layout>
   );
 
-  function handleEditorDidMount(
-    editor: editor.IStandaloneCodeEditor,
-    monaco: any
-  ) {
-    allSchema.push(parentSchema);
-    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-      validate: true,
-      schemaValidation: "error",
-      schemas: allSchema,
-      allowComments: true,
-      trailingCommas: "ignore",
-    });
-    editorRef.current = editor;
-  }
   function handleValidateButtonClick() {
     // @ts-ignore
+    // const editorJsonString = JSON.stringify(editorRef.current.getValue());
     const editorJsonString = editorRef.current.getValue();
     const editorJson = JSON.parse(editorJsonString);
     // console.log(editorJson.mappings.dynamic);
-    alert(JSON.stringify(editorJson));
-    console.log(allSchema);
-  }
-  function handleValidate(markers: IMarker[]) {
-    // model markers
-    let errMessages = markers.map((marker) => {
-      const errMsg = `(Line Number ${marker.startLineNumber}) ${marker.severity}: ${marker.message}`;
-      if (
-        typeof errMsg !== "undefined" &&
-        !errors.some((e) => e.msg === errMsg) &&
-        errMsg !== ""
-      ) {
-        setErrors([{ id: nextId++, msg: errMsg }]);
-      }
-    });
-    console.log(`ErrMessages is ${errMessages}`);
-  }
-  function handleEditorChange(value: any, _: any) {
-    console.log("current value is :", value);
+    alert(editorJson);
+    for (let key in editorJson) {
+      console.log(key);
+    }
+    // console.log(editorJson);
+    // console.log(allSchema);
   }
 }
