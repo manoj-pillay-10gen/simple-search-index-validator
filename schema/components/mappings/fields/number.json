@@ -28,6 +28,18 @@
       "default": true
     }
   },
+  "anyOf": [
+    {
+      "properties": {
+        "indexIntegers": { "enum": [true] }
+      }
+    },
+    {
+      "properties": {
+        "indexDoubles": { "enum": [true] }
+      }
+    }
+  ],
   "required": ["type"],
   "additionalProperties": false
 }
