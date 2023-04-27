@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "fields": {
+      "a1": {
+        "type": "sortableNumberBetaV1"
+      },
+      "a2": {
+        "type": "sortableStringBetaV1"
+      },
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}

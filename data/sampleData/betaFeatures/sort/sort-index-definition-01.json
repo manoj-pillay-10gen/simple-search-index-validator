@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "color": [
+        {
+          "type": "stringFacet"
+        },
+        {
+          "type": "sortableStringBetaV1"
+        }
+      ],
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}

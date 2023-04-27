@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "fields": {
+      "a": {
+        "type": "document",
+        "dynamic": false,
+        "fields": {
+          "b": {
+            "type": "sortableNumberBetaV1"
+          }
+        }
+      },
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}

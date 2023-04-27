@@ -16,8 +16,7 @@
       "description": "Specify an array consisting of one or more character filters.",
       "items": {
         "$ref": "custom_analyzer/charFilter.json"
-      },
-      "minItems": 1
+      }
     },
     "tokenizer": {
       "$ref": "custom_analyzer/tokenizer.json",
@@ -30,8 +29,7 @@
       "description": "Specify an array consisting of one or more token filters.",
       "items": {
         "$ref": "custom_analyzer/tokenFilter.json"
-      },
-      "minItems": 1
+      }
     }
   },
   "required": ["name", "tokenizer"]

@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "origin": [
+        {
+          "type": "dateFacet"
+        },
+        {
+          "type": "sortableDateBetaV1"
+        }
+      ],
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}

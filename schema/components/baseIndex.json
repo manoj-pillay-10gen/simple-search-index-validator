@@ -30,9 +30,34 @@
       "minItems": 1
     },
     "storedSource": {
-      "type": "boolean",
       "markdownDescription": "**Specify fields in the documents to store on Atlas Search**. \n\n Value can be one of: \n- `true` to store all fields \n- `false`, to not store any fields and \n- [Object](https://www.mongodb.com/docs/atlas/atlas-search/stored-source-definition/#std-label-fts-stored-source-document) that specifies the fields to include or exclude from storage. \n If omitted, defaults to `false`. To learn more about the syntax and fields, see [Define Stored Source Fields in Your Atlas Search Index](https://www.mongodb.com/docs/atlas/atlas-search/stored-source-definition/#std-label-fts-stored-source-definition)",
-      "description": "Specify fields in your documents by storing them on Atlas Search to improve query performance."
+      "description": "Specify fields in your documents by storing them on Atlas Search to improve query performance.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "include": {
+              "type": "array",
+              "markdownDescription": "**List that contains the field names or dot-separated paths to fields to store**. \n\n In addition to the specified fields, Atlas Search stores `_id` also by default.",
+              "description": "Specify field names or dot-separated paths to fields to store",
+              "items": {
+                "type": "string"
+              }
+            },
+            "exclude": {
+              "type": "array",
+              "markdownDescription": "**List that contains the field names or dot-separated paths to fields to exclude from being stored**. \n\n If specified, Atlas Search stores original documents except the fields listed here.",
+              "description": "Specify field names or dot-separated paths to fields to exclude from storing",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "boolean"
+        }
+      ]
     }
   }
 }

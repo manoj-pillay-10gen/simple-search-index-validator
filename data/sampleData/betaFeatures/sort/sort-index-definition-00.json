@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "a": [
+        {
+          "type": "numberFacet"
+        },
+        {
+          "type": "sortableNumberBetaV1"
+        }
+      ],
+      "b": {
+        "type": "string"
+      }
+    }
+  }
+}
