@@ -10,12 +10,23 @@
           "$ref": "#/definitions/archetypalAnalyzers"
         },
         {
-          "$ref": "#/definitions/non-empty-string",
-          "not": {
-            "$ref": "#/definitions/archetypalAnalyzers"
-          }
+          "$ref": "#/definitions/non-empty-string"
         }
       ],
+      "default": "lucene.standard"
+    },
+    "autoCompleteAnalyzers": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/classicAnalyzers"
+        },
+        {
+          "$ref": "#/definitions/non-empty-string"
+        }
+      ],
+      "not": {
+        "enum": ["lucene.kuromoji"]
+      },
       "default": "lucene.standard"
     },
     "synonymAnalyzers": {
@@ -28,7 +39,7 @@
         }
       ],
       "not": {
-        "enum": ["lucene.kuromoji", "lucene.cdk"]
+        "enum": ["lucene.kuromoji", "lucene.cjk"]
       },
       "default": "lucene.standard"
     },

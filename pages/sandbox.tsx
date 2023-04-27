@@ -1,5 +1,10 @@
 import React, { useRef, useState } from "react";
-import Editor, { OnMount, OnValidate, OnChange } from "@monaco-editor/react";
+import Editor, {
+  OnMount,
+  OnValidate,
+  OnChange,
+  BeforeMount,
+} from "@monaco-editor/react";
 import Layout from "../components/layout";
 import files from "../data/files";
 import { loadAllSchema } from "../lib/schema";
@@ -32,15 +37,13 @@ export default function Home({ allSchema }) {
   const [errors, setErrors] = useState<{ id: number; msg: string }[]>([]);
   let nextId = 0;
 
-  const parentSchema = {
-    uri: "fullIndex.json", // id of the first schema
-    fileMatch: ["basic.json", "intermediate.json"], // associate with our model
-  };
-
-  const handleEditorDidMount: OnMount = (editor, monaco) => {
-    // here is another way to get monaco instance
-    // you can also store it in `useRef` for further usage
+  const handleBeforeEditorMount: BeforeMount = (monaco) => {
+    const parentSchema = {
+      uri: "fullIndex.json", // id of the first schema
+      fileMatch: ["*"], // associate with our model
+    };
     allSchema.push(parentSchema);
+    console.log(allSchema);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
       schemaValidation: "error",
@@ -48,7 +51,11 @@ export default function Home({ allSchema }) {
       allowComments: true,
       trailingCommas: "ignore",
     });
+  };
+
+  const handleEditorDidMount: OnMount = (editor) => {
     editorRef.current = editor;
+    editor.focus();
   };
 
   const handleValidate: OnValidate = (markers) => {
@@ -125,6 +132,7 @@ export default function Home({ allSchema }) {
             showUnused: true,
           }}
           theme="vs-dark"
+          beforeMount={handleBeforeEditorMount}
           onMount={handleEditorDidMount}
           onChange={handleEditorChange}
           onValidate={handleValidate}

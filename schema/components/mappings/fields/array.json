@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/mappings/fields/array.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "markdownDescription": "Specify the [data type](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-bson-data-chart) for the field being mapped.",
+      "description": "Specify the data type for the field being mapped.",
+      "enum": ["boolean", "date", "number", "objectId", "string"]
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

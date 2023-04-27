@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "components/mappings/fields/stringFacet.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "markdownDescription": "### How to Index String Fields For Faceted Search\nThe `stringFacet` type can be used to index [string](https://www.mongodb.com/docs/manual/reference/bson-types/#string) fields for faceting, which allows you to run a facet query on that field. Atlas Search doesn't apply the analyzer when indexing `string` fields for faceting.\n\nAtlas Search only supports [facet](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref) queries against fields indexed as the `stringFacet` type. To perform a normal search also on the same field, you must index the field as type `string` also.",
+      "description": "Specify this data type for indexing fields of type string for faceting.",
+      "const": "stringFacet"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}
