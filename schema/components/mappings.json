@@ -23,20 +23,25 @@
   },
   "anyOf": [
     {
-      "required": ["dynamic"],
-      "properties": {
-        "dynamic": {
-          "const": true
-        }
-      }
+      "required": ["dynamic"]
     },
     {
-      "required": ["fields"],
-      "properties": {
-        "fields": {
-          "minProperties": 1
-        }
+      "required": ["fields"]
+    }
+  ],
+  "if": {
+    "properties": {
+      "dynamic": {
+        "const": false
       }
     }
-  ]
+  },
+  "then": {
+    "required": ["fields"],
+    "properties": {
+      "fields": {
+        "minProperties": 1
+      }
+    }
+  }
 }
