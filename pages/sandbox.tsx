@@ -10,6 +10,7 @@ import files from "../data/files";
 import { loadAllSchema } from "../lib/schema";
 import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
+import slushTheme from "../styles/SlushTheme.json";
 
 export async function getStaticProps() {
   const res = loadAllSchema();
@@ -44,6 +45,7 @@ export default function Home({ allSchema }) {
     };
     allSchema.push(parentSchema);
     console.log(allSchema);
+    monaco.editor.defineTheme("sandboxTheme", slushTheme);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
       schemaValidation: "error",
@@ -132,9 +134,12 @@ export default function Home({ allSchema }) {
               enabled: true,
               mode: "subwordSmart",
             },
+            minimap: {
+              enabled: false,
+            },
             showUnused: true,
           }}
-          theme="vs-dark"
+          theme="sandboxTheme"
           beforeMount={handleBeforeEditorMount}
           onMount={handleEditorDidMount}
           onChange={handleEditorChange}

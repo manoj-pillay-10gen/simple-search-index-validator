@@ -1,0 +1,121 @@
+{
+  "base": "vs",
+  "inherit": true,
+  "rules": [
+    {
+      "token": "",
+      "background": "F1F1F1"
+    },
+    {
+      "token": "comment",
+      "foreground": "406040",
+      "fontStyle": "italic"
+    },
+    {
+      "token": "string",
+      "foreground": "c03030"
+    },
+    {
+      "token": "constant",
+      "foreground": "0080a0"
+    },
+    {
+      "token": "constant.numeric",
+      "foreground": "0080a0"
+    },
+    {
+      "token": "source.ocaml constant.numeric.floating-point",
+      "fontStyle": "underline"
+    },
+    {
+      "token": "constant.character",
+      "foreground": "800000"
+    },
+    {
+      "token": "keyword",
+      "foreground": "f2590c"
+    },
+    {
+      "token": "keyword.operator",
+      "foreground": "2060a0"
+    },
+    {
+      "token": "source.ocaml keyword.operator.symbol.prefix.floating-point",
+      "fontStyle": "underline"
+    },
+    {
+      "token": "source.ocaml keyword.operator.symbol.infix.floating-point",
+      "fontStyle": "underline"
+    },
+    {
+      "token": "entity.name.module",
+      "foreground": "0080ff"
+    },
+    {
+      "token": "support.other.module",
+      "foreground": "0080ff"
+    },
+    {
+      "token": "storage.type",
+      "foreground": "a08000"
+    },
+    {
+      "token": "storage",
+      "foreground": "008080"
+    },
+    {
+      "token": "entity.name.class.variant",
+      "foreground": "c08060"
+    },
+    {
+      "token": "keyword.other.directive",
+      "fontStyle": "bold"
+    },
+    {
+      "token": "entity.name.function",
+      "foreground": "800000"
+    },
+    {
+      "token": "storage.type.user-defined",
+      "foreground": "800080"
+    },
+    {
+      "token": "entity.name.type.class.type",
+      "foreground": "8000c0"
+    },
+    {
+      "token": "string.key.json",
+      "foreground": "41a6d9"
+    },
+    {
+      "token": "string.value.json",
+      "foreground": "465d00"
+    },
+    {
+      "token": "number.value.json",
+      "foreground": "0080a0"
+    },
+    {
+      "token": "keyword.json",
+      "foreground": "f2590c"
+    },
+    {
+      "token": "attribute.value.number",
+      "foreground": "abb0b6"
+    },
+    {
+      "token": "number",
+      "foreground": "ff6f22"
+    }
+  ],
+  "colors": {
+    "editor.background": "#fdfdff",
+    "editor.foreground": "#5c6773",
+    "editorIndentGuide.background": "#ffffff",
+    "editor.selectionBackground": "#f3ffb8",
+    "editor.lineHighlightBackground": "#fffef1",
+    "editor.selectionHighlightBackground": "#aaaaaa",
+    "editorCursor.foreground": "#000000",
+    "editorWhitespace.foreground": "#BFBFBF"
+  }
+}
