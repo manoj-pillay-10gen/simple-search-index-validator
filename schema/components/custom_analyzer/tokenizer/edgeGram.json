@@ -4,16 +4,19 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "edgeGram",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "minGram": {
+      "suggestSortText": "1",
       "type": "integer",
       "description": "Number of characters to include in the shortest token created.",
       "minimum": 0
     },
     "maxGram": {
+      "suggestSortText": "2",
       "type": "integer",
       "description": "Number of characters to include in the longest token created.",
       "minimum": 0

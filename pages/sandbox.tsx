@@ -115,6 +115,8 @@ export default function Home({ allSchema }) {
             },
             automaticLayout: true,
             fixedOverflowWidgets: true,
+            acceptSuggestionOnEnter: "on",
+            suggestSelection: "recentlyUsedByPrefix",
             suggest: {
               showWords: false,
               preview: true,
@@ -124,8 +126,9 @@ export default function Home({ allSchema }) {
               showTypeParameters: true,
               showEnumMembers: false,
             },
+            stickyTabStops: true,
             inlineSuggest: {
-              showToolbar: "always",
+              showToolbar: "onHover",
               enabled: true,
               mode: "subwordSmart",
             },

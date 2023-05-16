@@ -41,6 +41,29 @@ export default function Home({ allSchema }) {
 
   useEffect(() => {
     editorRef.current?.focus();
+
+    if (editorRef.current) {
+      const editor = editorRef.current.editor;
+
+      // Add the decoration
+      const decorations = editor.deltaDecorations(
+        [],
+        [
+          {
+            range: new window.monaco.Range(1, 1, 1, 1), // Example range for the decoration
+            options: {
+              isWholeLine: true,
+              className: "instruction-decoration", // CSS class for styling the decoration
+            },
+          },
+        ]
+      );
+
+      // Cleanup the decoration when component unmounts
+      return () => {
+        editor.deltaDecorations(decorations, []);
+      };
+    }
   }, [file.name]);
 
   return (
