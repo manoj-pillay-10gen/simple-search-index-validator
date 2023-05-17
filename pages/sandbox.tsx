@@ -10,7 +10,7 @@ import files from "../data/files";
 import { loadAllSchema } from "../lib/schema";
 import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import slushTheme from "../styles/SlushTheme.json";
+const slushTheme = require("../styles/SlushTheme.json");
 
 export async function getStaticProps() {
   const res = loadAllSchema();
