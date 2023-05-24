@@ -4,43 +4,43 @@
   "rules": [
     {
       "token": "comment",
-      "foreground": "007ab8",
+      "foreground": "#007AB8",
       "fontStyle": "italic"
     },
     {
+      "token": "keyword.json",
+      "foreground": "#F2590C"
+    },
+    {
       "token": "string.key.json",
-      "foreground": "016ee9"
+      "foreground": "#016EE9"
     },
     {
       "token": "string.value.json",
-      "foreground": "12824D"
+      "foreground": "#12824D"
     },
     {
       "token": "number.value.json",
-      "foreground": "d83713"
-    },
-    {
-      "token": "keyword.json",
-      "foreground": "f2590c"
+      "foreground": "#D83713"
     },
     {
       "token": "attribute.value.number",
-      "foreground": "d83713"
+      "foreground": "#D83713"
     },
     {
       "token": "number",
-      "foreground": "d83713"
+      "foreground": "#D83713"
     }
   ],
   "colors": {
     "editor.background": "#F9FBFA",
     "editor.foreground": "#3D4F58",
-    "editorIndentGuide.background": "#ffffff",
+    "editor.lineHighlightBackground": "#FDF7E5",
     "editor.selectionBackground": "#FFFFFF",
-    "editor.lineHighlightBackground": "#fffff9",
-    "editor.selectionHighlightBackground": "#ffffad",
+    "editor.selectionHighlightBackground": "#FFFFAD",
+    "editor.snippetTabstopHighlightBackground": "#E1FEFF",
     "editorCursor.foreground": "#000000",
-    "editorWhitespace.foreground": "#BFBFBF",
-    "editor.snippetTabstopHighlightBackground": "#E1FEFF"
+    "editorIndentGuide.background": "#FFFFFF",
+    "editorWhitespace.foreground": "#BFBFBF"
   }
 }
