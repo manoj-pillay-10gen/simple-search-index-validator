@@ -11,6 +11,7 @@ import { loadAllSchema } from "../lib/schema";
 import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 const slushTheme = require("../styles/SlushTheme.json");
+const leafyGreenLightTheme = require("../styles/LeafyGreenLightTheme.json");
 
 export async function getStaticProps() {
   const res = loadAllSchema();
@@ -45,7 +46,7 @@ export default function Home({ allSchema }) {
     };
     allSchema.push(parentSchema);
     console.log(allSchema);
-    monaco.editor.defineTheme("sandboxTheme", slushTheme);
+    monaco.editor.defineTheme("sandboxTheme", leafyGreenLightTheme);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
       schemaValidation: "error",
