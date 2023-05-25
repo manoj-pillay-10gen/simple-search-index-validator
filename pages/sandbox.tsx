@@ -12,6 +12,7 @@ import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 const slushTheme = require("../styles/SlushTheme.json");
 const leafyGreenLightTheme = require("../styles/LeafyGreenLightTheme.json");
+const draftTheme = require("../styles/draftTheme.json");
 
 export async function getStaticProps() {
   const res = loadAllSchema();
@@ -46,7 +47,7 @@ export default function Home({ allSchema }) {
     };
     allSchema.push(parentSchema);
     console.log(allSchema);
-    monaco.editor.defineTheme("sandboxTheme", leafyGreenLightTheme);
+    monaco.editor.defineTheme("sandboxTheme", draftTheme);
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
       schemaValidation: "error",
@@ -120,6 +121,7 @@ export default function Home({ allSchema }) {
             fixedOverflowWidgets: true,
             acceptSuggestionOnEnter: "on",
             suggestSelection: "recentlyUsedByPrefix",
+            mouseWheelZoom: true,
             suggest: {
               showWords: false,
               preview: true,

@@ -4,9 +4,9 @@
   "type": "object",
   "examples": [
     {
-      "<field-name>": [
+      "<field_name>": [
         {
-          "type": "<field-type>"
+          "type": "field_type"
         }
       ]
     }
