@@ -21,13 +21,6 @@
       "description": "Specify fields within the document to index."
     }
   },
-  "anyOf": [
-    {
-      "required": ["type", "dynamic"]
-    },
-    {
-      "required": ["type", "fields"]
-    }
-  ],
+  "required": ["type"],
   "additionalProperties": false
 }
