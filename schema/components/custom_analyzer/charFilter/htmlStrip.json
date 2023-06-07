@@ -6,12 +6,14 @@
   "markdownDescription": "The `htmlStrip` character filter strips out HTML constructs.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "htmlStrip",
       "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `htmlStrip`.",
       "description": "Human-readable label that identifies this character filter type."
     },
     "ignoredTags": {
+      "suggestSortText": "1",
       "type": "array",
       "description": "List that contains the HTML tags to exclude from filtering.",
       "items": {

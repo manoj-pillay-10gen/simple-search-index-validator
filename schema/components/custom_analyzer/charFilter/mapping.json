@@ -6,12 +6,14 @@
   "markdownDescription": "The `mapping` character filter applies user-specified normalization mappings to characters. It is based on Lucene's [MappingCharFilter](https://lucene.apache.org/core/8_0_0/analyzers-common/org/apache/lucene/analysis/charfilter/MappingCharFilter.html).",
   "properties": {
     "type": {
+      "suggestSortText": "1",
       "type": "string",
       "const": "mapping",
       "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `mapping`",
       "description": "Human-readable label that identifies this character filter type."
     },
     "mappings": {
+      "suggestSortText": "1",
       "type": "object",
       "markdownDescription": "Object that contains a comma-separated list of mappings. A mapping indicates that one character or group of characters should be substituted for another, in the format `<original> : <replacement>`.",
       "additionalProperties": {
