@@ -5,27 +5,34 @@
   "title": "nGram",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
       "const": "nGram"
     },
     "minGram": {
+      "suggestSortText": "1",
       "type": "integer",
       "markdownDescription": "Number that specifies the minimum length of generated n-grams. Value must be less than or equal to `maxGram`.",
       "description": "Number that specifies the minimum length of generated n-grams.",
       "minimum": 0
     },
     "maxGram": {
+      "suggestSortText": "2",
       "type": "integer",
       "markdownDescription": "Number that specifies the maximum length of generated n-grams. Value must be greater than or equal to `minGram`.",
       "description": "Number that specifies the maximum length of generated n-grams.",
       "minimum": 0
     },
     "termNotInBounds": {
+      "suggestSortText": "3",
       "type": "string",
       "markdownDescription": "String that specifies whether to index tokens shorter than `minGram` or longer than `maxGram`. Accepted values are:\n\n- `include` \n\n- `omit`\n\nIf `include` is specified, tokens shorter than `minGram` or longer than `maxGram` are indexed as-is. If `omit` is specified, those tokens are not indexed.",
       "description": "String that specifies whether to index tokens shorter than `minGram` or longer than `maxGram`",
-      "enum": ["include", "omit"],
+      "enum": [
+        "include",
+        "omit"
+      ],
       "default": "omit"
     }
   },

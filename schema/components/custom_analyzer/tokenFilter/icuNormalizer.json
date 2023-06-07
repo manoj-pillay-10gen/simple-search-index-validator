@@ -5,15 +5,22 @@
   "title": "icuNormalizer",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
       "const": "icuNormalizer"
     },
     "normalizationForm": {
+      "suggestSortText": "1",
       "type": "string",
       "markdownDescription": "Normalization form to apply. Accepted values are:\n\n- `nfd` (Canonical Decomposition)\n\n- `nfc` (Canonical Decomposition, followed by Canonical Composition)\n\n- `nfkd` (Compatibility Decomposition)\n\n- `nfkc` (Compatibility Decomposition, followed by Canonical Composition)\n\n To learn more about the supported normalization forms, see \n[Section 1.2: Normalization Forms, UTR#15](https://unicode.org/reports/tr15/#Norm_Forms).",
       "description": "Normalization form to apply.",
-      "enum": ["nfd", "nfc", "nfkd", "nfkc"],
+      "enum": [
+        "nfd",
+        "nfc",
+        "nfkd",
+        "nfkc"
+      ],
       "default": "nfc"
     }
   },

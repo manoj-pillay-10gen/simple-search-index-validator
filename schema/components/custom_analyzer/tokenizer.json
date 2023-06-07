@@ -17,6 +17,9 @@
       ]
     }
   },
+  "required": [
+    "type"
+  ],
   "oneOf": [
     {
       "$ref": "tokenizer/edgeGram.json"

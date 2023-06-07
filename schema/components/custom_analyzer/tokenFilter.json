@@ -2,6 +2,37 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter.json",
   "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "asciiFolding",
+        "daitchMokotoffSoundex",
+        "edgeGram",
+        "englishPossessive",
+        "flattenGraph",
+        "icuFolding",
+        "icuNormalizer",
+        "kStemming",
+        "length",
+        "lowercase",
+        "nGram",
+        "porterStemming",
+        "regex",
+        "reverse",
+        "shingle",
+        "snowballStemming",
+        "spanishPluralStemming",
+        "stempel",
+        "stopword",
+        "trim",
+        "wordDelimiterGraph"
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ],
   "oneOf": [
     {
       "$ref": "tokenFilter/asciiFolding.json"

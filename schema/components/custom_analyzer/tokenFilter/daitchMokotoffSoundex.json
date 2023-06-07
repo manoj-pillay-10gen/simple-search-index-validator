@@ -5,15 +5,20 @@
   "title": "daitchMokotoffSoundex",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
       "const": "daitchMokotoffSoundex"
     },
     "originalTokens": {
+      "suggestSortText": "1",
       "type": "string",
       "markdownDescription": "String that specifies whether to include or omit the original tokens in the output of the token filter. Value can be one of the following: \n\n- `include` - include the original tokens with the encoded tokens in the output of the token filter. We recommend this value if you want queries on both the original tokens as well as the encoded forms. \n\n- `omit` - omit the original tokens and include only the encoded tokens in the output of the token filter. Use this value if you want to query only on the encoded forms of the original tokens.",
       "description": "Specify whether to include or omit the original tokens in the output of the token filter",
-      "enum": ["include", "omit"],
+      "enum": [
+        "include",
+        "omit"
+      ],
       "default": "include"
     }
   },

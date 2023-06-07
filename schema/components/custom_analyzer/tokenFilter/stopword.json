@@ -5,11 +5,13 @@
   "title": "stopword",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
       "const": "stopword"
     },
     "tokens": {
+      "suggestSortText": "1",
       "type": "array",
       "items": {
         "type": "string"
@@ -19,6 +21,7 @@
       "description": "List that contains the stop words that correspond to the tokens to remove."
     },
     "ignoreCase": {
+      "suggestSortText": "2",
       "type": "boolean",
       "markdownDescription": "Flag that indicates whether to ignore the case of stop words when filtering the tokens to remove. The value can be one of the following:\n\n- `true` : ignore case and remove all tokens that match the specified stop words\n\n- `false` : be case-sensitive and remove only tokens that exactly match the specified case\n\nIf omitted, defaults to `true`.",
       "description": "Specify whether to ignore the case of stop words when filtering the tokens to remove.",

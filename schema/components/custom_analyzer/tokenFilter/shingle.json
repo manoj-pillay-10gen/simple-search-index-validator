@@ -5,17 +5,20 @@
   "title": "shingle",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "description": "Human-readable label that identifies this token filter type.",
       "const": "shingle"
     },
     "minShingleSize": {
+      "suggestSortText": "1",
       "type": "integer",
       "markdownDescription": "Minimum number of tokens per shingle. Must be less than or equal to `maxShingleSize`.",
       "description": "Minimum number of tokens per shingle.",
       "minimum": 0
     },
     "maxShingleSize": {
+      "suggestSortText": "2",
       "type": "integer",
       "markdownDescription": "Maximum number of tokens per shingle. Must be greater than or equal to `minShingleSize`.",
       "description": " Maximum number of tokens per shingle.",
