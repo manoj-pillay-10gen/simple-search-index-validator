@@ -4,11 +4,13 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "whitespace",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "maxTokenLength": {
+      "suggestSortText": "1",
       "type": "integer",
       "markdownDescription": "Maximum length for a single token. Tokens greater than this length are split at `maxTokenLength` into multiple tokens.",
       "description": "Maximum length for a single token. Tokens greater than this length are split at the specified length into multiple tokens.",

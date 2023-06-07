@@ -4,11 +4,13 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "regexSplit",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {
+      "suggestSortText": "1",
       "type": "string",
       "description": "Regular expression to match against"
     }

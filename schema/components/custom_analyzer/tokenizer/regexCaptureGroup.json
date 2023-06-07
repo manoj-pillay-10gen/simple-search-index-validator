@@ -4,15 +4,18 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "regexCaptureGroup",
       "description": "Human-readable label that identifies this tokenizer type."
     },
     "pattern": {
+      "suggestSortText": "1",
       "type": "string",
       "description": "Regular expression to match against"
     },
     "group": {
+      "suggestSortText": "2",
       "type": "integer",
       "description": "Index of the character group within the matching expression to extract into tokens. Use 0 to extract all character groups.",
       "minimum": 0
