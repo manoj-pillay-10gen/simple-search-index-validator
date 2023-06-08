@@ -53,34 +53,18 @@
       "type": "object",
       "markdownDescription": "### String field to index with the name of the alternate analyzer specified in the multi object. \n\nTo learn more about specifying the multi object, see [Multi Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/multi/#std-label-ref-multi-analyzers) following [this example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/string-type/#std-label-fts-field-types-string-egs).",
       "description": "Specify a string field to index with the name of an alternate analyzer named within.",
-      "patternProperties": {
-        "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$": {
-          "anyOf": [
-            {
-              "$ref": "#"
-            },
-            {
-              "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
       "examples": [
         {
-          "<field_name>": [
-            {
-              "type": "string"
-            }
-          ]
+          "<multi_analyzer_name>": {
+            "type": "string"
+          }
         }
       ],
+      "patternProperties": {
+        "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$": {
+          "$ref": "#"
+        }
+      },
       "additionalProperties": false
     },
     "norms": {
