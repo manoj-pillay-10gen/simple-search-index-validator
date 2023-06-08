@@ -4,24 +4,31 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index Numeric Values for Faceted Search\nThe  `numberFacet` type can be used to index numeric values using the specified `representation` for faceting. You can index numbers of BSON types `int32`, `int64`, and `double`.\n\nAtlas Search only supports [facet](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref) queries against fields indexed as the `numberFacet` type. To perform a normal search also on the same field, you must index the field as type `number` also.\n\n#### Review numberFacet Limitations\nThe following limitations apply:\n- You can't index `decimal128` for faceting.\n- You can't index numeric values in arrays or in a document contained in an array for faceting.\n- You can't facet over numeric fields indexed as part of an `embeddedDocuments` field.",
       "description": "Specify this field type for indexing fields of type int32, int64, dateTime or double for faceting.",
       "const": "numberFacet"
     },
     "representation": {
+      "suggestSortText": "1",
       "type": "string",
       "markdownDescription": "### Data type of the field to index. \nValues are:\n- `int64` - for indexing large integers without loss of precision and for rounding double values to integers. You can't use this type to index large double values.\n- `double` - for indexing large double values without rounding.\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-facet-type/#std-label-number-facet-egs).",
       "description": "Specify the type to represent the field being indexes. Choose between int64 or double.",
-      "enum": ["int64", "double"]
+      "enum": [
+        "int64",
+        "double"
+      ]
     },
     "indexIntegers": {
+      "suggestSortText": "2",
       "type": "boolean",
       "markdownDescription": "### Specify whether to index or omit indexing `int32` and `int64` type fields. \nValue can be:\n- `true` \n- `false`\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-type/#std-label-number-egs).\n\n **Note**: Either this or `indexDoubles` must be true.",
       "description": "Specify whether to index or omit indexing int32 and int64 type fields.",
       "default": true
     },
     "indexDoubles": {
+      "suggestSortText": "3",
       "type": "boolean",
       "markdownDescription": "### Specify whether to index or omit indexing `double` type values. \nValue can be:\n- `true` \n- `false`\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-type/#std-label-number-egs).\n\n **Note**: Either this or `indexIntegers` must be true.",
       "description": "Specify whether to index or omit indexing double type fields.",

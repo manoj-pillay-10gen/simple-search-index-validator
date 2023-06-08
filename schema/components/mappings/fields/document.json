@@ -4,18 +4,21 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index Fields in Objects and Documents\nYou can use the Atlas Search document type to index fields in objects or documents.",
       "description": "Specify this data type for the indexing fields that are either a document or an object.",
       "const": "document"
     },
     "dynamic": {
+      "suggestSortText": "1",
       "type": "boolean",
       "markdownDescription": "### Choose whether to recursively index all fields and embedded documents. \nIf set to `true`, Atlas Search recursively indexes all fields and embedded documents in the `document` except fields of [certain data types](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-bson-data-chart). To index all fields in a document including fields that Atlas Search doesn't dynamically index, define the fields in the index definition.If omitted or set to `false`, you must specify individual fields to index.",
       "description": "Specify whether to recursively index all fields and embedded documents.",
       "default": false
     },
     "fields": {
+      "suggestSortText": "2",
       "$ref": "../fields.json",
       "markdownDescription": "### Document that maps field names to field definitions. \nTo learn more, see an [example](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-index-config-example). This is required if `dynamic` is omitted or set to `false`.",
       "description": "Specify fields within the document to index."

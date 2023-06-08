@@ -4,12 +4,14 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index GeoJSON Objects\nThe `geo` type can be used to index geographic points and shape coordinates. For this type, the indexed field must be a [GeoJSON](https://www.mongodb.com/docs/manual/reference/geojson/) object. You can use the [geoShape](https://www.mongodb.com/docs/atlas/atlas-search/geoShape/#std-label-geoshape-ref) and [geoWithin](https://www.mongodb.com/docs/atlas/atlas-search/geoWithin/#std-label-geowithin-ref) operators to query indexed fields of type `geo`.",
       "description": "Specify this data type for the indexing geographic points and shape coordinates.",
       "const": "geo"
     },
     "indexShapes": {
+      "suggestSortText": "1",
       "type": "boolean",
       "markdownDescription": "### Choose whether to index shapes.\nBy default, Atlas Search:\n- Indexes points, even when nested.\n- Doesn't index shape geometries such as lines and polygons.\n\nValue can be:\n- `true` to index shapes and points\n- `false` to index only points",
       "description": "Specify whether to index shapes",

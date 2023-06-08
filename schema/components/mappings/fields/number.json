@@ -4,24 +4,31 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index Numeric Values\nThe `number` type can be used to index fields with numeric values of `int32`, `int64`, `dateTime`, and `double` data types. You can use the [equals](https://www.mongodb.com/docs/atlas/atlas-search/equals/#std-label-equals-ref), [range](https://www.mongodb.com/docs/atlas/atlas-search/range/#std-label-range-ref), and [near](https://www.mongodb.com/docs/atlas/atlas-search/near/#std-label-near-ref) operators to query indexed fields of type `number`.\n\n> #### NOTE\n> To query numeric values in arrays, you can use only the [range](https://www.mongodb.com/docs/atlas/atlas-search/range/#std-label-range-ref) operator.",
       "description": "Specify this field type for indexing fields of type int32, int64, dateTime or double.",
       "const": "number"
     },
     "representation": {
+      "suggestSortText": "1",
       "type": "string",
       "markdownDescription": "### Data type of the field to index. \nValues are:\n- `int64` - for indexing large integers without loss of precision and for rounding double values to integers. You can't use this type to index large double values.\n- `double` - for indexing large double values without rounding.\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-type/#std-label-number-egs).",
       "description": "Specify the type to represent the field being indexes. Choose between int64 or double.",
-      "enum": ["int64", "double"]
+      "enum": [
+        "int64",
+        "double"
+      ]
     },
     "indexIntegers": {
+      "suggestSortText": "2",
       "type": "boolean",
       "markdownDescription": "### Specify whether to index or omit indexing `int32` and `int64` type fields. \nValue can be:\n- `true` \n- `false`\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-type/#std-label-number-egs).",
       "description": "Specify whether to index or omit indexing int32 and int64 type fields.",
       "default": true
     },
     "indexDoubles": {
+      "suggestSortText": "3",
       "type": "boolean",
       "markdownDescription": "### Specify whether to index or omit indexing `double` type values. \nValue can be:\n- `true` \n- `false`\n\nTo learn more, see [example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-type/#std-label-number-egs).",
       "description": "Specify whether to index or omit indexing double type fields.",

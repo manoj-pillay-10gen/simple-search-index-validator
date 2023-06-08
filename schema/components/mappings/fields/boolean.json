@@ -4,6 +4,7 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "Specify the [data type](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-bson-data-chart) for the field being mapped.",
       "description": "Specify this data type for indexing fields of type boolean.",

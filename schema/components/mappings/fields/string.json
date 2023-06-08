@@ -4,65 +4,94 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index String Fields\nThe `string` type can be used to index [string](https://www.mongodb.com/docs/manual/reference/bson-types/#string) fields. You can use the Atlas Search [`phrase`](https://www.mongodb.com/docs/atlas/atlas-search/phrase/#std-label-phrase-ref), [queryString](https://www.mongodb.com/docs/atlas/atlas-search/queryString/#std-label-querystring-ref), [`span`](https://www.mongodb.com/docs/atlas/atlas-search/span/#std-label-span-ref), [`text`](https://www.mongodb.com/docs/atlas/atlas-search/text/#std-label-text-ref), [`wildcard`](https://www.mongodb.com/docs/atlas/atlas-search/wildcard/#std-label-wildcard-ref), [`regex`](https://www.mongodb.com/docs/atlas/atlas-search/regex/#std-label-regex-ref), and [`moreLikeThis`](https://www.mongodb.com/docs/atlas/atlas-search/morelikethis/#std-label-more-like-this-ref) operators to query fields indexed as the `string` type.\n\n#### Review the Limitations for the string Type\nThe `string` type cannot be used to index fields for [facet](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref) or [autocomplete](https://www.mongodb.com/docs/atlas/atlas-search/autocomplete/#std-label-autocomplete-ref) queries. Instead, you must use [static mappings](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-static-dynamic-mappings) to index the string fields as the following types:\n- [`stringFacet`](https://www.mongodb.com/docs/atlas/atlas-search/field-types/string-facet-type/#std-label-bson-data-types-string-facet) type to run a [facet](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref) query on string fields. Note that Atlas Search doesn't [dynamically](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-static-dynamic-mappings) index string fields for faceting.\n- [`autocomplete`](https://www.mongodb.com/docs/atlas/atlas-search/field-types/autocomplete-type/#std-label-bson-data-types-autocomplete) type to run [autocomplete](https://www.mongodb.com/docs/atlas/atlas-search/autocomplete/#std-label-autocomplete-ref) operator queries on string fields. Note that Atlas Search doesn't [dynamically](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-static-dynamic-mappings) index string fields for [autocompletion.](https://www.mongodb.com/docs/atlas/atlas-search/autocomplete/#std-label-autocomplete-ref)",
       "description": "Specify this field type for indexing fields of type string.",
       "const": "string"
     },
     "analyzer": {
+      "suggestSortText": "1",
       "$ref": "../../common.json#/definitions/analyzers",
       "markdownDescription": "### Name of a built-in or custom [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to use for indexing the field. \nIf omitted, defaults to an analyzer in the following order:\n1. The `analyzer` option for the [index](https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#std-label-ref-index-definitions) if specified.\n2. The `lucene.standard` analyzer.",
       "description": "Name of the analyzer to use for indexing this field."
     },
     "searchAnalyzer": {
+      "suggestSortText": "2",
       "$ref": "../../common.json#/definitions/analyzers",
       "markdownDescription": "### Analyzer to use when querying the field. \nIf omitted, defaults to an analyzer in the following order:\n1. The `analyzer` option for this field if specified.\n2. The `searchAnalyzer` option for the [index](https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#std-label-ref-index-definitions) if specified.\n3. The `analyzer` option for the [index](https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#std-label-ref-index-definitions) if specified.\n4. The `lucene.standard` analyzer.",
       "description": "Name of the analyzer to use when querying this field."
     },
     "indexOptions": {
+      "suggestSortText": "3",
       "type": "string",
       "markdownDescription": "### Amount of information to store for the indexed field. \n\nValue can be one of the following:\n- `docs` - Only indexes documents. The frequency and position of the indexed term are ignored. Only a single occurence of the term is reflected in the [score.](https://www.mongodb.com/docs/atlas/atlas-search/scoring/#std-label-scoring-ref)\n- `freqs` - Only indexes documents and term frequency. The position of the indexed term is ignored.\n- `positions` - Indexes documents, term frequency, and term positions.\n- `offsets` - (_Default_) Indexes documents, term frequency, term positions, and term offsets. This option is required for [highlight.](https://www.mongodb.com/docs/atlas/atlas-search/highlighting/#std-label-highlight-ref)",
       "description": "Specify the amount of information to store for the indexed field.",
-      "enum": ["docs", "freqs", "positions", "offsets"],
+      "enum": [
+        "docs",
+        "freqs",
+        "positions",
+        "offsets"
+      ],
       "default": "offsets"
     },
     "store": {
+      "suggestSortText": "4",
       "type": "boolean",
       "markdownDescription": "### Flag that indicates whether to store the exact document text as well as the analyzed values in the index. \n\nValue can be `true` or `false`. The value for this option must be true for [highlight](https://www.mongodb.com/docs/atlas/atlas-search/highlighting/#std-label-highlight-ref)\n\n> #### NOTE\n> To reduce the index size and performance footprint, we recommend setting store to false. To learn more, see [Atlas Search Index Performance.](https://www.mongodb.com/docs/atlas/atlas-search/performance/index-performance/#std-label-index-perf)",
       "description": "Specify whether to store the exact document text as well as the analyzed values in the index",
       "default": true
     },
     "ignoreAbove": {
+      "suggestSortText": "5",
       "type": "integer",
       "markdownDescription": "###Maximum number of characters in the value of the field to index.\n\n Atlas Search doesn't index if the field value is greater than the specified number of characters.",
       "description": "Specify an upper limit for the number of characters in the value of the field to index."
     },
     "multi": {
+      "suggestSortText": "6",
       "type": "object",
       "markdownDescription": "### String field to index with the name of the alternate analyzer specified in the multi object. \n\nTo learn more about specifying the multi object, see [Multi Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/multi/#std-label-ref-multi-analyzers) following [this example](https://www.mongodb.com/docs/atlas/atlas-search/field-types/string-type/#std-label-fts-field-types-string-egs).",
       "description": "Specify a string field to index with the name of an alternate analyzer named within.",
       "patternProperties": {
         "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$": {
           "anyOf": [
-            { "$ref": "#"},
+            {
+              "$ref": "#"
+            },
             {
               "type": "array",
               "items": {
                 "anyOf": [
-                  {"$ref": "#"}
+                  {
+                    "$ref": "#"
+                  }
                 ]
               }
             }
           ]
         }
       },
+      "examples": [
+        {
+          "<field_name>": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      ],
       "additionalProperties": false
     },
     "norms": {
+      "suggestSortText": "7",
       "type": "string",
       "markdownDescription": "### String that specifies whether to include or omit the field length in the result when scoring. \n\nThe length of the field is determined by the number of tokens produced by the analyzer for the field. Value can be one of the following:\n- `include` - to include the field length when scoring.\n- `omit` - to omit the field length when scoring.\n\nIf value is `include`, Atlas Search uses the length of the field to determine the higher score when scoring. For example, if two documents match an Atlas Search query, the document with the shorter field length scores higher than the document with the longer field length.\n\nIf value is `omit`, Atlas Search ignores the field length when scoring.",
       "description": "Specify whether to include or omit the field length in result when scoring",
-      "enum": ["include", "omit"],
+      "enum": [
+        "include",
+        "omit"
+      ],
       "default": "include"
     }
   },

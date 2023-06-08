@@ -4,6 +4,7 @@
   "type": "object",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "markdownDescription": "### How to Index ObjectId Values in Fields\nThe `objectId` type can be used to index [ObjectId](https://www.mongodb.com/docs/manual/reference/bson-types/#objectid) field values. Fields of type objectId can be queried using the [equals](https://www.mongodb.com/docs/atlas/atlas-search/equals/#std-label-equals-ref) operator.\n\nThe `objectId` type can also be used to index:\n- Fields whose value is an array of objectId. To learn more, see [How to Index the Elements of an Array.](https://www.mongodb.com/docs/atlas/atlas-search/field-types/array-type/#std-label-fts-array-ref)\n- `objectId` fields inside an array of documents indexed as the [`embeddedDocuments`](https://www.mongodb.com/docs/atlas/atlas-search/field-types/embedded-documents-type/#std-label-bson-data-types-embedded-documents) type.",
       "description": "Specify this field type for indexing fields of type objectId.",
