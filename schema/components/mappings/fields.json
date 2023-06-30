@@ -12,17 +12,35 @@
     }
   ],
   "patternProperties": {
-    "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$": {
+    "^.*$": {
       "anyOf": [
-        { "$ref": "fields/array.json" },
-        { "$ref": "fields/autocomplete.json" },
-        { "$ref": "fields/boolean.json" },
-        { "$ref": "fields/date.json" },
-        { "$ref": "fields/dateFacet.json" },
-        { "$ref": "fields/document.json" },
-        { "$ref": "fields/embeddedDocuments.json" },
-        { "$ref": "fields/geo.json" },
-        { "$ref": "fields/number.json" },
+        {
+          "$ref": "fields/array.json"
+        },
+        {
+          "$ref": "fields/autocomplete.json"
+        },
+        {
+          "$ref": "fields/boolean.json"
+        },
+        {
+          "$ref": "fields/date.json"
+        },
+        {
+          "$ref": "fields/dateFacet.json"
+        },
+        {
+          "$ref": "fields/document.json"
+        },
+        {
+          "$ref": "fields/embeddedDocuments.json"
+        },
+        {
+          "$ref": "fields/geo.json"
+        },
+        {
+          "$ref": "fields/number.json"
+        },
         { "$ref": "fields/numberFacet.json" },
         { "$ref": "fields/objectId.json" },
         { "$ref": "fields/string.json" },
