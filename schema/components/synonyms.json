@@ -22,8 +22,8 @@
           "properties": {
             "collection": {
               "type": "string",
-              "pattern": "^[a-zA-Z_$][a-zA-Z0-9_.]{0,63}$",
-              "errorMessage": "Field name does not meet MongoDb collection naming restrictions. Please see https://www.mongodb.com/docs/manual/reference/limits/#mongodb-limit-Restriction-on-Collection-Names .",
+              "pattern": "^[a-zA-Z_][a-zA-Z0-9_.]{0,118}$",
+              "errorMessage": "Collection name does not meet MongoDb collection naming restrictions. Please see https://www.mongodb.com/docs/manual/reference/limits/#mongodb-limit-Restriction-on-Collection-Names .",
               "markdownDescription": "Name of the MongoDB collection that is in the same database as the Atlas Search index. Documents in this collection must be in the format described in the [Synonyms Source Collection Documents](https://www.mongodb.com/docs/atlas/atlas-search/synonyms/#std-label-synonyms-coll-spec).",
               "description": "Specify the name for synonyms collection available in your database to use in this search index."
             }

@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "dynamic": true
+  },
+  "synonyms": [
+    {
+      "name": "ab",
+      "source": {
+        "collection": "_____________________a_synonyms_collection_name_with_the_maximum_permissible_number_of_characters______________________"
+      },
+      "analyzer": "lucene.standard"
+    }
+  ]
+}

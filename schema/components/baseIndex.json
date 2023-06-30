@@ -64,8 +64,7 @@
               "description": "Specify field names or dot-separated paths to fields to store",
               "items": {
                 "type": "string",
-                "pattern": "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$",
-                "errorMessage": "Field name does not meet MongoDb field naming restrictions. Please see https://www.mongodb.com/docs/manual/core/document/#field-names ."
+                "pattern": "^.*$"
               }
             },
             "exclude": {
@@ -74,8 +73,7 @@
               "description": "Specify field names or dot-separated paths to fields to exclude from storing",
               "items": {
                 "type": "string",
-                "pattern": "^[a-zA-Z_$][a-zA-Z0-9_$.]{0,63}$",
-                "errorMessage": "Field name does not meet MongoDb field naming restrictions. Please see https://www.mongodb.com/docs/manual/core/document/#field-names ."
+                "pattern": "^.*$"
               }
             }
           },
