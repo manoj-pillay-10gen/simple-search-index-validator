@@ -39,29 +39,69 @@
           "$ref": "fields/geo.json"
         },
         {
+          "$ref": "fields/knnVector.json"
+        },
+        {
           "$ref": "fields/number.json"
         },
-        { "$ref": "fields/numberFacet.json" },
-        { "$ref": "fields/objectId.json" },
-        { "$ref": "fields/string.json" },
-        { "$ref": "fields/stringFacet.json" },
+        {
+          "$ref": "fields/numberFacet.json"
+        },
+        {
+          "$ref": "fields/objectId.json"
+        },
+        {
+          "$ref": "fields/string.json"
+        },
+        {
+          "$ref": "fields/stringFacet.json"
+        },
         {
           "type": "array",
           "items": {
             "anyOf": [
-              { "$ref": "fields/array.json" },
-              { "$ref": "fields/autocomplete.json" },
-              { "$ref": "fields/boolean.json" },
-              { "$ref": "fields/date.json" },
-              { "$ref": "fields/dateFacet.json" },
-              { "$ref": "fields/document.json" },
-              { "$ref": "fields/embeddedDocuments.json" },
-              { "$ref": "fields/geo.json" },
-              { "$ref": "fields/number.json" },
-              { "$ref": "fields/numberFacet.json" },
-              { "$ref": "fields/objectId.json" },
-              { "$ref": "fields/string.json" },
-              { "$ref": "fields/stringFacet.json" }
+              {
+                "$ref": "fields/array.json"
+              },
+              {
+                "$ref": "fields/autocomplete.json"
+              },
+              {
+                "$ref": "fields/boolean.json"
+              },
+              {
+                "$ref": "fields/date.json"
+              },
+              {
+                "$ref": "fields/dateFacet.json"
+              },
+              {
+                "$ref": "fields/document.json"
+              },
+              {
+                "$ref": "fields/embeddedDocuments.json"
+              },
+              {
+                "$ref": "fields/geo.json"
+              },
+              {
+                "$ref": "fields/knnVector.json"
+              },
+              {
+                "$ref": "fields/number.json"
+              },
+              {
+                "$ref": "fields/numberFacet.json"
+              },
+              {
+                "$ref": "fields/objectId.json"
+              },
+              {
+                "$ref": "fields/string.json"
+              },
+              {
+                "$ref": "fields/stringFacet.json"
+              }
             ]
           }
         }
