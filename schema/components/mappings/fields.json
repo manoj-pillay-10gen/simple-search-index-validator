@@ -57,6 +57,9 @@
           "$ref": "fields/stringFacet.json"
         },
         {
+          "$ref": "fields/token.json"
+        },
+        {
           "type": "array",
           "items": {
             "anyOf": [
@@ -101,6 +104,9 @@
               },
               {
                 "$ref": "fields/stringFacet.json"
+              },
+              {
+                "$ref": "fields/token.json"
               }
             ]
           }
