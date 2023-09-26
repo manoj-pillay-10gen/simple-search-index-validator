@@ -2,24 +2,33 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/icuNormalizer.json",
   "type": "object",
-  "title": "icuNormalizer",
+  "_description": "Token filter that normalizes tokens using a standard Unicode Normalization Mode.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "icuNormalizer"
+      "markdownDescription": "Label that identifies the `icuNormalizer` token filter type, which normalizes tokens using a standard [Unicode Normalization Mode](https://unicode.org/reports/tr15/).",
+      "const": "icuNormalizer",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "normalizationForm": {
       "suggestSortText": "1",
       "type": "string",
-      "markdownDescription": "Normalization form to apply. Accepted values are:\n\n- `nfd` (Canonical Decomposition)\n\n- `nfc` (Canonical Decomposition, followed by Canonical Composition)\n\n- `nfkd` (Compatibility Decomposition)\n\n- `nfkc` (Compatibility Decomposition, followed by Canonical Composition)\n\n To learn more about the supported normalization forms, see \n[Section 1.2: Normalization Forms, UTR#15](https://unicode.org/reports/tr15/#Norm_Forms).",
-      "description": "Normalization form to apply.",
-      "enum": [
-        "nfd",
-        "nfc",
-        "nfkd",
-        "nfkc"
+      "markdownDescription": "String that indicates the [normalization form](https://unicode.org/reports/tr15/#Norm_Forms) to apply. Values include: \n\n- `nfd` (Canonical Decomposition)\n\n- `nfc` (Canonical Decomposition, followed by Canonical Composition)\n\n- `nfkd` (Compatibility Decomposition)\n\n- `nfkc` (Compatibility Decomposition, followed by Canonical Composition)\n\n",
+      "description": "String that indicates the normalization form to apply.",
+      "oneOf": [
+        {
+          "const": "nfd"
+        },
+        {
+          "const": "nfc"
+        },
+        {
+          "const": "nfkd"
+        },
+        {
+          "const": "nfkc"
+        }
       ],
       "default": "nfc"
     }

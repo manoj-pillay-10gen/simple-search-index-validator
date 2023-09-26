@@ -15,14 +15,14 @@
     "analyzer": {
       "suggestSortText": "2",
       "$ref": "common.json#/definitions/analyzers",
-      "markdownDescription": "**Specify the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to apply to string fields when indexing**. \n\n If you set this only at the top and do not specify an analyzer for the fields in the index definition, Atlas Search applies this analyzer to all the fields. To use a different analyzer for each field, you must specify a different analyzer for the field. If omitted, defaults to [Standard Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/standard/#std-label-ref-standard-analyzer).",
-      "description": "Analyzers are policies that combine a tokenizer, which extracts tokens from text, with filters that you define. Specify an analyzer"
+      "markdownDescription": "[Analyzer](https://dochub.mongodb.org/core/analyzers-fts) to apply on fields when indexing. If you omit this parameter, it defaults to the [Standard Analyzer](https://dochub.mongodb.org/core/standard-fts). Atlas Search applies this analyzer to all fields unless you specify a different analyzer in the field mapping definition.",
+      "description": "Analyzer to apply to string fields when indexing."
     },
     "searchAnalyzer": {
       "suggestSortText": "3",
       "$ref": "common.json#/definitions/analyzers",
-      "markdownDescription": "**Specify the [analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/#std-label-analyzers-ref) to apply to query text before searching with it**. \n\n If omitted, defaults to the analyzer that you specify for the analyzer option. If you omit both the searchAnalyzer and the analyzer options, defaults to the [Standard Analyzer](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/standard/#std-label-ref-standard-analyzer).",
-      "description": "Specify the analyzer to apply to query text before searching with it. "
+      "markdownDescription": "[Analyzer](https://dochub.mongodb.org/core/analyzers-fts) to apply to query text before searching with it. If you omit this parameter, it defaults to the analyzer that you specify for the `analyzer` option. If you omit both the `searchAnalyzer` and the `analyzer` options, it defaults to the [Standard Analyzer](https://dochub.mongodb.org/core/standard-fts).",
+      "description": "Analyzer to apply to query text before searching with it."
     },
     "analyzers": {
       "suggestSortText": "1",
@@ -30,14 +30,14 @@
       "items": {
         "$ref": "custom_analyzer.json"
       },
-      "markdownDescription": "**Specify the [Custom Analyzers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/custom/#std-label-custom-analyzers) to use in this index.**",
-      "description": "Define a custom analyzer to suit your specific indexing needs.",
+      "markdownDescription": "[Custom analyzers](https://dochub.mongodb.org/core/custom-fts) to define for your index. You can define as many custom analyzers as you need for your specific indexing purposes.",
+      "description": "Custom analyzers to define for your index.",
       "minItems": 1
     },
     "storedSource": {
       "suggestSortText": "5",
-      "markdownDescription": "**Specify fields in the documents to store on Atlas Search**. \n\n Value can be one of: \n- `true` to store all fields \n- `false`, to not store any fields and \n- [Object](https://www.mongodb.com/docs/atlas/atlas-search/stored-source-definition/#std-label-fts-stored-source-document) that specifies the fields to include or exclude from storage. \n If omitted, defaults to `false`. To learn more about the syntax and fields, see [Define Stored Source Fields in Your Atlas Search Index](https://www.mongodb.com/docs/atlas/atlas-search/stored-source-definition/#std-label-fts-stored-source-definition)",
-      "description": "Specify fields in your documents by storing them on Atlas Search to improve query performance.",
+      "markdownDescription": "Boolean flag that indicates whether to store all the fields in your collection on Atlas Search or a Stored Source Object that specifies the fields to `include` or `exclude` from storage. If you omit this parameter, it defaults to `false`. To learn more, see [Define Stored Source Fields in Your Atlas Search Index](https://dochub.mongodb.org/core/stored-source-definition-fts).",
+      "description": "Boolean flag that indicates whether to store the fields in your collection on Atlas Search or a Stored Source Object that specifies the fields to include or exclude from storage.",
       "examples": [
         {
           "include": [
@@ -60,20 +60,22 @@
           "properties": {
             "include": {
               "type": "array",
-              "markdownDescription": "**List that contains the field names or dot-separated paths to fields to store**. \n\n In addition to the specified fields, Atlas Search stores `_id` also by default.",
-              "description": "Specify field names or dot-separated paths to fields to store",
+              "markdownDescription": "List that contains the field names or dot-separated paths to the fields to store. By default, Atlas Search also stores the `_id` field.",
+              "description": "List that contains the field names or paths to the fields to store.",
               "items": {
                 "type": "string",
-                "pattern": "^.*$"
+                "pattern": "^.*$",
+                "errorMessage": "Field name does not meet MongoDb field naming restrictions. Please see https://www.mongodb.com/docs/manual/core/document/#field-names ."
               }
             },
             "exclude": {
               "type": "array",
-              "markdownDescription": "**List that contains the field names or dot-separated paths to fields to exclude from being stored**. \n\n If specified, Atlas Search stores original documents except the fields listed here.",
-              "description": "Specify field names or dot-separated paths to fields to exclude from storing",
+              "markdownDescription": "List that contains the field names or dot-separated paths to the fields to exclude from storage.",
+              "description": "List that contains the field names or paths to the fields to exclude from storage.",
               "items": {
                 "type": "string",
-                "pattern": "^.*$"
+                "pattern": "^.*$",
+                "errorMessage": "Field name does not meet MongoDb field naming restrictions. Please see https://www.mongodb.com/docs/manual/core/document/#field-names ."
               }
             }
           },

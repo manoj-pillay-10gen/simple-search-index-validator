@@ -1,24 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/mappings.json",
-  "markdownDescription": "**Specifies how to index fields at different paths for this index**. \n\n Specify dynamic or static mapping of fields. To disable dynamic mapping, set `dynamic` to `false`. By default, dynamic mapping is enabled. If you disable dynamic mapping, you must specify the fields to index. To learn more about dynamic and static mappings, see [Review Atlas Search Index Syntax](https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#std-label-ref-index-definitions).",
-  "description": "Specifies how to index fields at different paths for this index.",
+  "markdownDescription": "Object that defines how Atlas Search indexes fields for this index. To learn more, see [Review Atlas Search Index Syntax](https://dochub.mongodb.org/core/index-definition-fts).",
+  "description": "Object that defines how Atlas Search indexes fields for this index.",
   "type": "object",
   "properties": {
     "dynamic": {
       "type": "boolean",
-      "markdownDescription": "**Enables or disables dynamic mapping of fields for this index.** \n\n If set to `true`, Atlas Search recursively indexes all [dynamically indexable](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-bson-data-chart) fields. If set to `false`, you must specify individual fields to index using `mappings.fields`. If omitted, defaults to `false`. \n> **Important**: Atlas Search dynamically indexes all fields in a `document` using the default settings for the detected data type. Atlas Search also dynamically indexes all nested documents under the document, unless you explicitly override by setting `dynamic` to `false`. \n\n To learn more, see [index configuration example](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-index-config-example).  ",
-      "description": "Enables or disables dynamic mapping of fields for this index.",
-      "defaultSnippets": [
-        {
-          "body": true
-        }
-      ]
+      "markdownDescription": "Boolean flag that indicates whether to recursively index all [dynamically indexable](https://dochub.mongodb.org/core/data-types-fts) fields. If you set this parameter to `false`, you must specify individual fields to index. If you omit this parameter, it defaults to `false`. To learn more, see [Static and Dynamic Mappings](https://dochub.mongodb.org/core/static-and-dynamic-mappings-fts).",
+      "description": "Boolean flag that indicates whether to recursively index all dynamically indexable fields."
     },
     "fields": {
       "$ref": "mappings/fields.json",
-      "description": "One or more field specifications for the Atlas Search index. Required only if `mappings.dynamic` is omitted or set to `false`.",
-      "markdownDescription": "### Field specifications for the Atlas Search index\n\n Required only if dynamic mapping is disabled. Specifies the fields that you would like to index. To learn more, see [Define Field Mappings](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-fts-field-mappings)."
+      "markdownDescription": "Field specifications for your Atlas Search index. If you omit or set the `dynamic` flag to `false`, you must specify this parameter. To learn more, see [Define Field Mappings](https://dochub.mongodb.org/core/field-mapping-definition-fts).",
+      "description": "Field specifications for your Atlas Search index."
     }
   },
   "anyOf": [
@@ -37,11 +32,14 @@
     }
   },
   "then": {
-    "required": ["fields"],
+    "required": [
+      "fields"
+    ],
     "properties": {
       "fields": {
         "minProperties": 1
       }
     }
-  }
+  },
+  "additionalProperties": false
 }

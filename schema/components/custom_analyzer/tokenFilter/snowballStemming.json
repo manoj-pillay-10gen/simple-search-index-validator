@@ -2,19 +2,21 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/snowballStemming.json",
   "type": "object",
-  "title": "snowballStemming",
+  "_description": "Token filter that stems tokens using a Snowball-generated stemmer.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "snowballStemming"
+      "markdownDescription": "Label that identifies the `snowballStemming` token filter type, which stems tokens using a [Snowball-generated stemmer](https://snowballstem.org/).",
+      "description": "Label that identifies the snowballStemming token filter type, which stems tokens using a Snowball-generated stemmer.",
+      "const": "snowballStemming",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "stemmerName": {
       "suggestSortText": "1",
       "type": "string",
-      "markdownDescription": "The following values are valid:\n\n- `arabic`\n\n- `armenian`\n\n- `basque`\n\n- `catalan`\n\n- `danish`\n\n- `dutch`\n\n- `english`\n\n- `estonian`\n\n- `finnish`\n\n- `french`\n\n- `german`\n\n- `german2` (Alternative German language stemmer. Handles the umlaut by expanding ü to ue in most contexts.)\n\n- `hungarian`\n\n- `irish`\n\n- `italian`\n\n- `kp` (Kraaij-Pohlmann stemmer, an alternative stemmer for Dutch.)\n\n- `lithuanian`\n\n- `lovins` (The first-ever published \"Lovins JB\" stemming algorithm.)\n\n- `norwegian`\n\n- `porter` (The original Porter English stemming algorithm.)\n\n- `portuguese`\n\n- `romanian`\n\n- `russian`\n\n- `spanish`\n\n- `swedish`\n\n- `turkish`",
-      "description": "Specify a stemmer to use.",
+      "markdownDescription": "Label that identifies the stemmer to use. To learn more about the available values, see [snowballStemming](https://dochub.mongodb.org/core/snowballStemming-fts)",
+      "description": "Label that identifies the stemmer to use.",
       "enum": [
         "arabic",
         "armenian",

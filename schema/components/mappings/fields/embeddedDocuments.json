@@ -6,22 +6,23 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "### How to Index Fields in Arrays of Objects and Documents\nThe `embeddedDocuments` type can be used to index fields in documents and objects that are elements of an array. Atlas Search indexes embedded documents independent of their parent document. Each indexed document contains only fields that are part of the embedded document array element. You can use only the [embeddedDocument](https://www.mongodb.com/docs/atlas/atlas-search/embedded-document/#std-label-embedded-document-ref) operator to query fields indexed as `embeddedDocuments` type.\n\n\n#### Review embeddedDocuments Type Limitations\nThe following limitations apply:\n\n- You can use `embeddedDocuments` only on fields with up to `5` levels of nesting. An embeddedDocuments field can't have more than `4` parent embeddedDocuments fields.\n- You can't use embeddedDocuments for [date](https://www.mongodb.com/docs/atlas/atlas-search/field-types/date-facet-type/#std-label-bson-data-types-date-facet) or [numeric](https://www.mongodb.com/docs/atlas/atlas-search/field-types/number-facet-type/#std-label-bson-data-types-number-facet) faceting.\n- You can't [highlight](https://www.mongodb.com/docs/atlas/atlas-search/highlighting/#std-label-highlight-ref) fields or children of fields indexed as the `embeddedDocuments` type.\n- Atlas Search doesn't support indexing more than two billion index objects, where each indexed embedded document counts as a single object. Using the `embeddedDocuments` field type can result in indexing objects over this limit, which causes an index to transition to a failed state. If your collection has large arrays that might generate two billion objects, you must [shard](https://www.mongodb.com/docs/atlas/cluster-additional-settings/#std-label-create-cluster-sharding) any clusters that contain indexes with the `embeddedDocuments` type.",
-      "description": "Specify this data type for indexing fields in document or objects that are elements of an array.",
-      "const": "embeddedDocuments"
+      "markdownDescription": "Data type to use to index fields in documents and objects that are elements of an array. To learn more about this data type, see [embeddedDocuments Type](https://dochub.mongodb.org/core/embedded-documents-type-fts).",
+      "description": "Data type to use to index fields in document or objects that are elements of an array.",
+      "const": "embeddedDocuments",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     },
     "dynamic": {
       "suggestSortText": "1",
       "type": "boolean",
-      "markdownDescription": "### Specify whether to index every dynamically indexable field in the document.\n\nValue can be one of the following:\n- `true` - index all indexable fields.\n- `false` - don't index all the indexable fields.",
-      "description": "Specify whether to index every dynamically indexable field in the document.",
+      "markdownDescription": "Boolean flag that indicates whether to index every [dynamically indexable](https://dochub.mongodb.org/core/data-types-fts) field in the document. If you omit or set this parameter to `false`, Atlas Search doesn't index any field and you can define the fields to index in the field definition.",
+      "description": "Boolean flag that indicates whether to index every dynamically indexable field in the document.",
       "default": false
     },
     "fields": {
       "suggestSortText": "2",
       "$ref": "../fields.json",
-      "markdownDescription": "### Document that maps field names to field definitions. \nTo learn more, see an [example](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-index-config-example). This is required if `dynamic` is omitted or set to `false`.",
-      "description": "Specify fields within the document to index."
+      "markdownDescription": "Document that maps field names to field definitions. To learn more, see [an example](https://dochub.mongodb.org/core/mapping-example-fts).",
+      "description": "Document that maps field names to field definitions."
     }
   },
   "required": ["type"],

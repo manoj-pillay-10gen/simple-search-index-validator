@@ -1,24 +1,29 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenizer/nGram.json",
+  "_description": "Tokenizer that tokenizes input into text chunks, or n-grams, of given sizes.",
   "type": "object",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
       "const": "nGram",
-      "description": "Human-readable label that identifies this tokenizer type."
+      "markdownDescription": "Label that identifies the `nGram` tokenizer type, which tokenizes input into text chunks, or n-grams, of given sizes.",
+      "description": "Label that identifies the nGram tokenizer type, which tokenizes input into text chunks, or n-grams, of given sizes.",
+      "$ref": "../tokenizer.json#/definitions/typePropertyOverrides"
     },
     "minGram": {
       "suggestSortText": "1",
       "type": "integer",
-      "description": "Number of characters to include in the shortest token created.",
+      "markdownDescription": "Number of characters to include in the shortest token.",
+      "description": "Number of characters to include in the shortest token.",
       "minimum": 0
     },
     "maxGram": {
       "suggestSortText": "2",
       "type": "integer",
-      "description": "Number of characters to include in the longest token created.",
+      "markdownDescription": "Number of characters to include in the longest token.",
+      "description": "Number of characters to include in the longest token.",
       "minimum": 0
     }
   },

@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenizer/standard.json",
   "type": "object",
+  "_description": "Tokenizer that tokenizes input based on word break rules from the Unicode Text Segmentation algorithm.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
       "const": "standard",
-      "description": "Human-readable label that identifies this tokenizer type."
+      "markdownDescription": "Label that identifies the `standard` tokenizer type, which tokenizes input based on word break rules from the [Unicode Text Segmentation algorithm](https://www.unicode.org/L2/L2019/19034-uax29-34-draft.pdf).",
+      "description": "Label that identifies the standard tokenizer type, which tokenizes input based on word break rules from the Unicode Text Segmentation algorithm.",
+      "$ref": "../tokenizer.json#/definitions/typePropertyOverrides"
     },
     "maxTokenLength": {
       "suggestSortText": "1",

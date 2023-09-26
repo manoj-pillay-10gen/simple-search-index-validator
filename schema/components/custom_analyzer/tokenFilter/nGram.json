@@ -2,13 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/nGram.json",
   "type": "object",
-  "title": "nGram",
+  "_description": "Token filter that tokenizes input into n-grams of configured sizes.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "nGram"
+      "markdownDescription": "Label that identifies the `nGram` token filter type, which tokenizes input into n-grams of configured sizes.",
+      "description": "Label that identifies the nGram token filter type, which tokenizes input into n-grams of configured sizes.",
+      "const": "nGram",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "minGram": {
       "suggestSortText": "1",
@@ -27,11 +29,15 @@
     "termNotInBounds": {
       "suggestSortText": "3",
       "type": "string",
-      "markdownDescription": "String that specifies whether to index tokens shorter than `minGram` or longer than `maxGram`. Accepted values are:\n\n- `include` \n\n- `omit`\n\nIf `include` is specified, tokens shorter than `minGram` or longer than `maxGram` are indexed as-is. If `omit` is specified, those tokens are not indexed.",
-      "description": "String that specifies whether to index tokens shorter than `minGram` or longer than `maxGram`",
-      "enum": [
-        "include",
-        "omit"
+      "markdownDescription": "String that specifies whether to `include` or `omit` tokens shorter than `minGram` or longer than `maxGram`.",
+      "description": "String that specifies whether to include or omit tokens shorter than minGram or longer than maxGram.",
+      "oneOf": [
+        {
+          "const": "include"
+        },
+        {
+          "const": "omit"
+        }
       ],
       "default": "omit"
     }

@@ -6,9 +6,10 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "Specify the [data type](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/#std-label-bson-data-chart) for the field being mapped.",
-      "description": "Specify this data type for indexing fields of type boolean.",
-      "const": "boolean"
+      "markdownDescription": "Data type to use to index fields with `true` and `false` values. To learn more about this data type, see [boolean Type](https://dochub.mongodb.org/core/boolean-type-fts).",
+      "description": "Data type to use to index fields with true and false values.",
+      "const": "boolean",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     }
   },
   "required": ["type"],

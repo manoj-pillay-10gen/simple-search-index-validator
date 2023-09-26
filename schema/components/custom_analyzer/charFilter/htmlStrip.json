@@ -2,19 +2,20 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/charFilter/htmlStrip.json",
   "type": "object",
-  "title": "htmlStrip",
-  "markdownDescription": "The `htmlStrip` character filter strips out HTML constructs.",
+  "_description": "Character filter that strips out HTML elements.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
       "const": "htmlStrip",
-      "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `htmlStrip`.",
-      "description": "Human-readable label that identifies this character filter type."
+      "markdownDescription": "Label that identifies the `htmlStrip` character filter type, which strips out HTML elements.",
+      "description": "Label that identifies the htmlStrip character filter type, which strips out HTML elements.",
+      "$ref": "../charFilter.json#/definitions/typePropertyOverrides"
     },
     "ignoredTags": {
       "suggestSortText": "1",
       "type": "array",
+      "markdownDescription": "List that contains the HTML tags to exclude from filtering.",
       "description": "List that contains the HTML tags to exclude from filtering.",
       "items": {
         "type": "string"

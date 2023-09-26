@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/englishPossessive.json",
   "type": "object",
-  "title": "englishPossessive",
+  "_description": "Token filter that removes possessives (trailing 's) from words.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "englishPossessive"
+      "markdownDescription": "Label that identifies the `englishPossessive` token filter type, which removes possessives (trailing 's) from words.",
+      "description": "Label that identifies the englishPossessive token filter type, which removes possessives (trailing 's) from words.",
+      "const": "englishPossessive",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "required": ["type"],

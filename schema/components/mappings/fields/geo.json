@@ -6,15 +6,16 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "### How to Index GeoJSON Objects\nThe `geo` type can be used to index geographic points and shape coordinates. For this type, the indexed field must be a [GeoJSON](https://www.mongodb.com/docs/manual/reference/geojson/) object. You can use the [geoShape](https://www.mongodb.com/docs/atlas/atlas-search/geoShape/#std-label-geoshape-ref) and [geoWithin](https://www.mongodb.com/docs/atlas/atlas-search/geoWithin/#std-label-geowithin-ref) operators to query indexed fields of type `geo`.",
-      "description": "Specify this data type for the indexing geographic points and shape coordinates.",
-      "const": "geo"
+      "markdownDescription": "Data type to use to index fields with [GeoJSON](https://dochub.mongodb.org/core/geojson-type-fts) objects, which includes geographic points and shape coordinates. To learn more about this data type, see [geo Type](https://dochub.mongodb.org/core/geo-type-fts).",
+      "description": "Data type to use to index fields with geographic points and shape coordinates.",
+      "const": "geo",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     },
     "indexShapes": {
       "suggestSortText": "1",
       "type": "boolean",
-      "markdownDescription": "### Choose whether to index shapes.\nBy default, Atlas Search:\n- Indexes points, even when nested.\n- Doesn't index shape geometries such as lines and polygons.\n\nValue can be:\n- `true` to index shapes and points\n- `false` to index only points",
-      "description": "Specify whether to index shapes",
+      "markdownDescription": "Boolean flag that indicates whether Atlas Search indexes both points and geographic shape coordinates, such as lines and polygons. If you set this parameter to `false`, Atlas Search indexes only points.",
+      "description": "Boolean flag that indicates whether Atlas Search indexes both geographic shape coordinates and points.",
       "default": false
     }
   },

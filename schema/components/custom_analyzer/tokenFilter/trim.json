@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/trim.json",
   "type": "object",
-  "title": "trim",
+  "_description": "Token filter that trims leading and trailing whitespace from tokens.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "trim"
+      "markdownDescription": "Label that identifies the `trim` token filter type, which trims leading and trailing whitespace from tokens.",
+      "description": "Label that identifies the trim token filter type, which trims leading and trailing whitespace from tokens.",
+      "const": "trim",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "required": ["type"],

@@ -2,13 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/shingle.json",
   "type": "object",
-  "title": "shingle",
+  "_description": "Token filter that constructs shingles (token n-grams) configurable sizes from a series of tokens.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "shingle"
+      "markdownDescription": "Label that identifies the `shingle` token filter type, which constructs shingles (token n-grams) configurable sizes from a series of tokens.",
+      "description": "Label that identifies the shingle token filter type, which constructs shingles (token n-grams) configurable sizes from a series of tokens.",
+      "const": "shingle",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "minShingleSize": {
       "suggestSortText": "1",

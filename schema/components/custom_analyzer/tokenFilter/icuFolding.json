@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/icuFolding.json",
   "type": "object",
-  "title": "icuFolding",
+  "_description": "Token filter that applies character folding from Unicode Technical Report #30 such as accent removal, case folding, canonical duplicates folding, and many others detailed in the report.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "icuFolding"
+      "markdownDescription": "Label that identifies the `icuFolding` token filter type, which applies character folding from [Unicode Technical Report #30](http://www.unicode.org/reports/tr30/tr30-4.html) such as accent removal, case folding, canonical duplicates folding, and many others detailed in the report.",
+      "description": "Label that identifies the icuFolding token filter type, which applies character folding from Unicode Technical Report #30 such as accent removal, case folding, canonical duplicates folding, and many others detailed in the report.",
+      "const": "icuFolding",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "required": ["type"],

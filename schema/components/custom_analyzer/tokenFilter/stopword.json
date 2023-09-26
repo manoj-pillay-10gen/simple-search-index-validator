@@ -2,13 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/stopword.json",
   "type": "object",
-  "title": "stopword",
+  "_description": "Token filter that removes tokens for the stop words that you specify.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "stopword"
+      "markdownDescription": "Label that identifies the `stopword` token filter type, which removes tokens for the stop words that you specify.",
+      "description": "Label that identifies the stopword token filter type, which removes tokens for the stop words that you specify.",
+      "const": "stopword",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "tokens": {
       "suggestSortText": "1",
@@ -16,15 +18,14 @@
       "items": {
         "type": "string"
       },
-      "minItems": 1,
       "markdownDescription": "List that contains the stop words that correspond to the tokens to remove. Value must be one or more stop words.",
       "description": "List that contains the stop words that correspond to the tokens to remove."
     },
     "ignoreCase": {
       "suggestSortText": "2",
       "type": "boolean",
-      "markdownDescription": "Flag that indicates whether to ignore the case of stop words when filtering the tokens to remove. The value can be one of the following:\n\n- `true` : ignore case and remove all tokens that match the specified stop words\n\n- `false` : be case-sensitive and remove only tokens that exactly match the specified case\n\nIf omitted, defaults to `true`.",
-      "description": "Specify whether to ignore the case of stop words when filtering the tokens to remove.",
+      "markdownDescription": "Boolean flag that indicates whether to ignore the letter case and remove all tokens that match the specified stop words. If you omit this attribute, it defaults to `true`.",
+      "description": "Boolean flag that indicates whether to ignore the letter case and remove all tokens that match the specified stop words.",
       "default": true
     }
   },

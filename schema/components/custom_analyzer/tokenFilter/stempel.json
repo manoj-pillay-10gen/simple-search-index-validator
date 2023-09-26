@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/stempel.json",
   "type": "object",
-  "title": "stempel",
+  "_description": "Token filter that uses Lucene's default Polish stemmer table to stem words in the Polish language. It expects lowercase text.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "stempel"
+      "markdownDescription": "Label that identifies the `stempel` token filter type, which uses Lucene's [default Polish stemmer table](https://lucene.apache.org/core/9_2_0/analysis/stempel/org/apache/lucene/analysis/pl/PolishAnalyzer.html#DEFAULT_STEMMER_FILE) to stem words in the Polish language.",
+      "description": "Label that identifies the stempel token filter type, which uses Lucene's default Polish stemmer table to stem words in the Polish language.",
+      "const": "stempel",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "required": [

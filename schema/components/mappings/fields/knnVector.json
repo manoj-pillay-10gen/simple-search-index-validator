@@ -6,15 +6,16 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "Data type to use to index fields of type number array for [vector search](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/).",
+      "markdownDescription": "Data type to use to index fields of type number array for vector search. To learn more, see [knnVector Type](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/).",
       "description": "Data type to use to index fields of type number array for vector search.",
-      "const": "knnVector"
+      "const": "knnVector",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     },
     "dimensions": {
       "suggestSortText": "1",
       "type": "integer",
-      "markdownDescription": "Number of vector dimensions",
-      "description": "Number of vector dimensions",
+      "markdownDescription": "Number of vector dimensions. Values may range from 1 to 2048.",
+      "description": "Number of vector dimensions. Values may range from 1 to 2048.",
       "minimum": 1,
       "maximum": 2048
     },

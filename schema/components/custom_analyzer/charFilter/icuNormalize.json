@@ -2,14 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/charFilter/icuNormalize.json",
   "type": "object",
-  "title": "icuNormalize",
-  "markdownDescription": "The `icuNormalize` character filter normalizes text with the [ICU](http://site.icu-project.org/) Normalizer. It is based on Lucene's [ICUNormalizer2CharFilter](https://lucene.apache.org/core/8_3_0/analyzers-icu/org/apache/lucene/analysis/icu/ICUNormalizer2CharFilter.html).",
+  "_description": "Character filter that normalizes text with the ICU Normalizer.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
       "const": "icuNormalize",
-      "markdownDescription": "Human-readable label that identifies this character filter type. Value must be `icuNormalize`.",
-      "description": "Human-readable label that identifies this character filter type."
+      "markdownDescription": "Label that identifies the `icuNormalize` character filter type, which normalizes text with the [ICU](http://site.icu-project.org/) Normalizer.",
+      "description": "Label that identifies the icuNormalize character filter type, which normalizes text with the ICU Normalizer.",
+      "$ref": "../charFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "additionalProperties": false,

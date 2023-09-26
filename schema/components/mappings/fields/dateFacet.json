@@ -6,9 +6,10 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "### How to Index Date Fields For Faceted Search\nYou can use the Atlas Search `dateFacet` type for indexing date values for [faceting.](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref)\n\nAtlas Search only supports [facet](https://www.mongodb.com/docs/atlas/atlas-search/facet/#std-label-fts-facet-ref) queries against fields indexed as the dateFacet type. To perform a normal search also on the same field, you must index the field as type date also.",
-      "description": "Specify this data type for indexing fields of type date for faceting.",
-      "const": "dateFacet"
+      "markdownDescription": "Data type to use to index date values for [faceting](https://dochub.mongodb.org/core/faceting-fts). You can run only facet queries against fields indexed as the `dateFacet` type. To perform a normal text search on the same field, you must also index the field as type `date`. To learn more about this data type, see [dateFacet Type](https://dochub.mongodb.org/core/date-facet-type-fts).",
+      "description": "Data type to use to index fields with date values for faceting.",
+      "const": "dateFacet",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     }
   },
   "required": ["type"],

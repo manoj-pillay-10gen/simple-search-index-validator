@@ -17,8 +17,8 @@
     "storedSource": true,
     "name": {
       "$ref": "components/common.json#/definitions/non-empty-string",
-      "markdownDescription": "**Specify a name for the index**. \n\n In each [namespace](https://www.mongodb.com/docs/manual/reference/limits/#faq-dev-namespace), names of all indexes in the namespace must be unique. If omitted, defaults to `default`.",
-      "description": "Specify a name for the index.",
+      "markdownDescription": "Label that identifies the index. If you omit this parameter, it defaults to `default`. You must specify unique index names in each [collection](https://dochub.mongodb.org/core/collection-fts).",
+      "description": "Label that identifies the index.",
       "defaultSnippets": [
         {
           "label": "index name",
@@ -29,11 +29,13 @@
     },
     "database": {
       "$ref": "components/common.json#/definitions/non-empty-string",
-      "description": "Human readable label that identifies the database to contain the index."
+      "markdownDescription": "Label that identifies the database to contain the index.",
+      "description": "Label that identifies the database to contain the index."
     },
     "collectionName": {
       "$ref": "components/common.json#/definitions/non-empty-string",
-      "description": "Human readable label that identifies the collection being indexed."
+      "markdownDescription": "Label that identifies the collection to index.",
+      "description": "Label that identifies the collection to index."
     }
   },
   "required": ["mappings", "collectionName", "database", "name"],

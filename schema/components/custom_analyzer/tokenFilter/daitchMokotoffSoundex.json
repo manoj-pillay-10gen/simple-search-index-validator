@@ -2,22 +2,28 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/daitchMokotoffSoundex.json",
   "type": "object",
-  "title": "daitchMokotoffSoundex",
+  "_description": "The daitchMokotoffSoundex token filter creates tokens for words that sound the same based on the Daitch-Mokotoff Soundex phonetic algorithm.",
   "properties": {
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "daitchMokotoffSoundex"
+      "markdownDescription": "Label that identifies the `daitchMokotoffSoundex` token filter type, which creates tokens for words that sound the same based on the [Daitch-Mokotoff Soundex](https://en.wikipedia.org/wiki/Daitch%E2%80%93Mokotoff_Soundex) phonetic algorithm.",
+      "description": "Label that identifies the daitchMokotoffSoundex token filter type, which creates tokens for words that sound the same based on the Daitch-Mokotoff Soundex phonetic algorithm.",
+      "const": "daitchMokotoffSoundex",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     },
     "originalTokens": {
       "suggestSortText": "1",
       "type": "string",
-      "markdownDescription": "String that specifies whether to include or omit the original tokens in the output of the token filter. Value can be one of the following: \n\n- `include` - include the original tokens with the encoded tokens in the output of the token filter. We recommend this value if you want queries on both the original tokens as well as the encoded forms. \n\n- `omit` - omit the original tokens and include only the encoded tokens in the output of the token filter. Use this value if you want to query only on the encoded forms of the original tokens.",
+      "markdownDescription": "String that specifies whether to `include` or `omit` the original tokens in the output of the token filter.",
       "description": "Specify whether to include or omit the original tokens in the output of the token filter",
-      "enum": [
-        "include",
-        "omit"
+      "oneOf": [
+        {
+          "const": "include"
+        },
+        {
+          "const": "omit"
+        }
       ],
       "default": "include"
     }

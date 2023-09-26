@@ -6,9 +6,10 @@
     "type": {
       "suggestSortText": "0",
       "type": "string",
-      "markdownDescription": "### How to Index Date Fields\nYou can use the Atlas Search date type to index date values. You can query fields of type `date` using the Atlas Search [range](https://www.mongodb.com/docs/atlas/atlas-search/range/#std-label-range-ref), [near](https://www.mongodb.com/docs/atlas/atlas-search/near/#std-label-near-ref), and [equals](https://www.mongodb.com/docs/atlas/atlas-search/equals/#std-label-equals-ref) operators. \n\nYou can also use the `date` type to index:\n\n- Fields whose value is an array of dates. To learn more, see [How to Index the Elements of an Array.](https://www.mongodb.com/docs/atlas/atlas-search/field-types/array-type/#std-label-fts-array-ref)\n- Date fields inside an array of documents indexed as the [embeddedDocuments](https://www.mongodb.com/docs/atlas/atlas-search/field-types/embedded-documents-type/#std-label-bson-data-types-embedded-documents) type.",
-      "description": "Specify the data type for indexing fields of type date.",
-      "const": "date"
+      "markdownDescription": "Data type to use to index fields with date values, including date fields inside arrays and embedded documents. To learn more about this data type, see [date Type](https://dochub.mongodb.org/core/date-type-fts).",
+      "description": "Data type to use to index fields with date values.",
+      "const": "date",
+      "$ref": "../field.json#/definitions/typeErrorMessage"
     }
   },
   "required": ["type"],

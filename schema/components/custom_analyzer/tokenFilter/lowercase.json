@@ -2,12 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "components/custom_analyzer/tokenFilter/lowercase.json",
   "type": "object",
-  "title": "lowercase",
+  "_description": "Token filter that normalizes token text to lowercase.",
   "properties": {
     "type": {
+      "suggestSortText": "0",
       "type": "string",
-      "description": "Human-readable label that identifies this token filter type.",
-      "const": "lowercase"
+      "markdownDescription": "Label that identifies the `lowercase` token filter type, which normalizes token text to lowercase.",
+      "description": "Label that identifies the lowercase token filter type, which normalizes token text to lowercase.",
+      "const": "lowercase",
+      "$ref": "../tokenFilter.json#/definitions/typePropertyOverrides"
     }
   },
   "required": ["type"],

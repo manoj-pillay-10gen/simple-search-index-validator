@@ -10,8 +10,8 @@ import files from "../data/files";
 import { loadAllSchema } from "../lib/schema";
 import styles from "../components/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-const slushTheme = require("../styles/SlushTheme.json");
-const leafyGreenLightTheme = require("../styles/LeafyGreenLightTheme.json");
+// const slushTheme = require("../styles/SlushTheme.json");
+// const leafyGreenLightTheme = require("../styles/LeafyGreenLightTheme.json");
 const draftTheme = require("../styles/draftTheme.json");
 
 export async function getStaticProps() {
@@ -119,7 +119,6 @@ export default function Home({ allSchema }) {
             },
             automaticLayout: true,
             fixedOverflowWidgets: true,
-            acceptSuggestionOnEnter: "on",
             suggestSelection: "recentlyUsedByPrefix",
             mouseWheelZoom: true,
             suggest: {
@@ -129,7 +128,6 @@ export default function Home({ allSchema }) {
               showInlineDetails: true,
               showStatusBar: true,
               showTypeParameters: true,
-              showEnumMembers: false,
             },
             stickyTabStops: true,
             inlineSuggest: {
