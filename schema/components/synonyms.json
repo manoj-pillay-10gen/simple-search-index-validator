@@ -3,6 +3,17 @@
   "$id": "components/synonyms.json",
   "markdownDescription": "Synonym mappings to use in your index. To learn more, see [Define Synonym Mappings in Your Atlas Search Index](https://dochub.mongodb.org/core/synonym-mapping-fts).",
   "description": "Synonym mappings to use in your index.",
+  "examples": [
+    [
+      {
+        "name": "<synonym_mapping_name>",
+        "source": {
+          "collection": "<source_collection_name>"
+        },
+        "analyzer": "<synonym_mapping_analyzer>"
+      }
+    ]
+  ],
   "type": "array",
   "items": [
     {
