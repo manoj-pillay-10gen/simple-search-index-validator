@@ -8,7 +8,8 @@
       "type": "string",
       "const": "vectorSearch",
       "markdownDescription": "Index definition type for [vector search](https://www.mongodb.com/products/platform/atlas-vector-search).",
-      "description": "Index definition type for vector search."
+      "description": "Index definition type for vector search.",
+      "default": "vectorSearch"
     },
     "fields": {
       "$ref": "vectorComponents/fields.json",
