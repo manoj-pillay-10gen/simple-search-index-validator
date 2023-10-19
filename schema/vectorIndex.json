@@ -6,21 +6,14 @@
   "properties": {
     "type": {
       "type": "string",
-      "const": "vectorSearch"
+      "const": "vectorSearch",
+      "markdownDescription": "Index definition type for [vector search](https://www.mongodb.com/products/platform/atlas-vector-search).",
+      "description": "Index definition type for vector search."
     },
     "fields": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "vectorComponents/fields.json"
-          },
-          {
-            "$ref": "vectorComponents/filter.json"
-          }
-        ]
-      }
+      "$ref": "vectorComponents/fields.json",
+      "markdownDescription": "Array of fields to configure in the vector search index definition",
+      "description": "Array of fields to configure in the vector search index definition"
     }
   },
   "required": [

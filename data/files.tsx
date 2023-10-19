@@ -15,7 +15,7 @@ const vectorSearchIndexDefinitionJSON1 = `// Vector search index definition.
     {
       "type": "vector",
       "path": "<field-name>",
-      "numDimensions": <num-dimensions>,
+      "numDimensions": "<num-dimensions>",
       "similarity": "<similarity-function>"
     }
   ]
