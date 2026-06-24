@@ -57,5 +57,6 @@
     }
   ],
   "required": ["type"],
+  "deprecationMessage": "The `numberFacet` type is deprecated. Use the `number` type instead.",
   "additionalProperties": false
 }

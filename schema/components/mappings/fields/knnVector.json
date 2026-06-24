@@ -9,7 +9,8 @@
       "markdownDescription": "Data type to use to index fields of type number array for vector search. To learn more, see [knnVector Type](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/).",
       "description": "Data type to use to index fields of type number array for vector search.",
       "const": "knnVector",
-      "$ref": "../field.json#/definitions/typeErrorMessage"
+      "$ref": "../field.json#/definitions/typeErrorMessage",
+      "deprecationMessage": "knnVector Type is deprecated. Use Vector Search Index editor instead"
     },
     "dimensions": {
       "suggestSortText": "1",
@@ -36,5 +37,6 @@
     "dimensions",
     "similarity"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "deprecated": true
 }
